@@ -202,3 +202,72 @@ in APPPATH\Views\rubros\editaRubro.php on line 29.
  7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
  8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:01:46 --> Class "App\Controllers\Time" not found
+in APPPATH\Controllers\Presupuestos.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Presupuestos->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Presupuestos))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:10:18 --> Call to undefined function now()
+in APPPATH\Views\presupuestos\creaPresupuesto.php on line 5.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('presupuestos/creapresupuesto', [], true)
+ 4 APPPATH\Controllers\Presupuestos.php(26): view('presupuestos/creapresupuesto', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Presupuestos->crear()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Presupuestos))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:10:32 --> Class "date" not found
+in APPPATH\Views\presupuestos\creaPresupuesto.php on line 5.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('presupuestos/creapresupuesto', [], true)
+ 4 APPPATH\Controllers\Presupuestos.php(26): view('presupuestos/creapresupuesto', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Presupuestos->crear()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Presupuestos))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:10:42 --> Class "Date" not found
+in APPPATH\Views\presupuestos\creaPresupuesto.php on line 5.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('presupuestos/creapresupuesto', [], true)
+ 4 APPPATH\Controllers\Presupuestos.php(26): view('presupuestos/creapresupuesto', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Presupuestos->crear()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Presupuestos))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:12:20 --> Array to string conversion
+in APPPATH\Views\presupuestos\creaPresupuesto.php on line 5.
+ 1 APPPATH\Views\presupuestos\creaPresupuesto.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\presupuestos\\creaPresupuesto.php', 5)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\presupuestos\\creaPresupuesto.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('presupuestos/creapresupuesto', [], true)
+ 5 APPPATH\Controllers\Presupuestos.php(26): view('presupuestos/creapresupuesto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Presupuestos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Presupuestos))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:18:28 --> getdate(): Argument #1 ($timestamp) must be of type ?int, string given
+in APPPATH\Views\presupuestos\creaPresupuesto.php on line 5.
+ 1 APPPATH\Views\presupuestos\creaPresupuesto.php(5): getdate('n')
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\presupuestos\\creaPresupuesto.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('presupuestos/creapresupuesto', [], true)
+ 5 APPPATH\Controllers\Presupuestos.php(26): view('presupuestos/creapresupuesto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Presupuestos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Presupuestos))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:19:28 --> getdate(): Argument #1 ($timestamp) must be of type ?int, string given
+in APPPATH\Views\presupuestos\creaPresupuesto.php on line 5.
+ 1 APPPATH\Views\presupuestos\creaPresupuesto.php(5): getdate('mon')
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\presupuestos\\creaPresupuesto.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('presupuestos/creapresupuesto', [], true)
+ 5 APPPATH\Controllers\Presupuestos.php(26): view('presupuestos/creapresupuesto', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Presupuestos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Presupuestos))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
