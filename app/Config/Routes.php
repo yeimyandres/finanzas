@@ -25,7 +25,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-// $routes->setAutoRoute(false);
+$routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -53,3 +53,15 @@ $routes->get('/', 'Home::index');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+$routes->get('listacuentas', 'Cuentas::index');
+$routes->get('creacuenta', 'Cuentas::crear');
+$routes->post('guardacuenta', 'Cuentas::guardar');
+$routes->get('borracuenta/(:num)', 'Cuentas::borrar/$1');
+$routes->get('editacuenta/(:num)', 'Cuentas::editar/$1');
+$routes->post('actualizacuenta', 'Cuentas::actualizar');
+$routes->get('listarubros', 'Rubros::index');
+$routes->get('crearubro', 'Rubros::crear');
+$routes->post('guardarubro', 'Rubros::guardar');
+$routes->get('borrarubro/(:num)', 'Rubros::borrar/$1');
+$routes->get('editarubro/(:num)', 'Rubros::editar/$1');
+$routes->post('actualizarubro', 'Rubros::actualizar');

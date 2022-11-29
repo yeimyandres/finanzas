@@ -1,0 +1,6 @@
+CRITICAL - 2022-11-28 13:01:38 --> Cannot declare class App\Controllers\Rubros because the name is already in use
+in APPPATH\Controllers\Rubros.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-28 13:02:05 --> Cannot declare class App\Controllers\Rubros because the name is already in use
+in APPPATH\Controllers\Rubros.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

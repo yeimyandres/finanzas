@@ -1,0 +1,204 @@
+CRITICAL - 2022-11-29 09:26:47 --> Invalid file: plantilla/piepagina.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('plantilla/piepagina.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('plantilla/piepagina', [], true)
+ 3 APPPATH\Controllers\Cuentas.php(15): view('plantilla/piepagina')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Cuentas->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cuentas))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 09:33:48 --> syntax error, unexpected token "}", expecting "," or ";"
+in APPPATH\Views\cuentas\listaCuentas.php on line 19.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('cuentas/listaCuentas', [], true)
+ 3 APPPATH\Controllers\Cuentas.php(17): view('cuentas/listaCuentas', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Cuentas->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cuentas))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 09:35:08 --> Undefined variable $libro
+in APPPATH\Views\cuentas\listaCuentas.php on line 17.
+ 1 APPPATH\Views\cuentas\listaCuentas.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $libro', 'APPPATH\\Views\\cuentas\\listaCuentas.php', 17)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\cuentas\\listaCuentas.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('cuentas/listaCuentas', [], true)
+ 5 APPPATH\Controllers\Cuentas.php(17): view('cuentas/listaCuentas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Cuentas->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cuentas))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 09:48:07 --> syntax error, unexpected token "=>"
+in APPPATH\Controllers\Cuentas.php on line 45.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Cuentas.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Cuentas')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Cuentas')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Cuentas', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 09:48:09 --> syntax error, unexpected token "=>"
+in APPPATH\Controllers\Cuentas.php on line 45.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Cuentas.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Cuentas')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Cuentas')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Cuentas', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 09:49:14 --> syntax error, unexpected token "=>"
+in APPPATH\Controllers\Cuentas.php on line 45.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Cuentas.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Cuentas')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Cuentas')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Cuentas', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 09:55:41 --> Invalid file: template/cabecera.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('template/cabecera.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('template/cabecera', [], true)
+ 3 APPPATH\Controllers\Cuentas.php(23): view('template/cabecera')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Cuentas->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cuentas))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:34:28 --> Class "App\Controllers\Rubro" not found
+in APPPATH\Controllers\Rubros.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:35:46 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::findAll()
+in APPPATH\Controllers\Rubros.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:36:04 --> Cannot use object of type mysqli as array
+in APPPATH\Views\rubros\listaRubros.php on line 21.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 4 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:37:39 --> syntax error, unexpected token ";"
+in APPPATH\Views\rubros\listaRubros.php on line 21.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 3 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:37:53 --> syntax error, unexpected token ";"
+in APPPATH\Views\rubros\listaRubros.php on line 21.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 3 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:37:56 --> syntax error, unexpected token ";"
+in APPPATH\Views\rubros\listaRubros.php on line 21.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 3 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:38:05 --> syntax error, unexpected token ";"
+in APPPATH\Views\rubros\listaRubros.php on line 21.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 3 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:38:43 --> syntax error, unexpected variable "$rubro"
+in APPPATH\Views\rubros\listaRubros.php on line 19.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 3 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:47:18 --> syntax error, unexpected end of file
+in APPPATH\Views\rubros\listaRubros.php on line 43.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 3 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:47:26 --> Cannot use object of type stdClass as array
+in APPPATH\Views\rubros\listaRubros.php on line 21.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 4 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:47:55 --> Cannot use object of type stdClass as array
+in APPPATH\Views\rubros\listaRubros.php on line 34.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 4 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 12:48:49 --> Cannot use object of type stdClass as array
+in APPPATH\Views\rubros\listaRubros.php on line 34.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/listarubros', [], true)
+ 4 APPPATH\Controllers\Rubros.php(17): view('rubros/listarubros', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:00:43 --> Undefined variable $rubros
+in APPPATH\Views\rubros\creaRubro.php on line 13.
+ 1 APPPATH\Views\rubros\creaRubro.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rubros', 'APPPATH\\Views\\rubros\\creaRubro.php', 13)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\rubros\\creaRubro.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/crearubro', [], true)
+ 5 APPPATH\Controllers\Rubros.php(28): view('rubros/crearubro', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:11:06 --> Undefined variable $cuenta
+in APPPATH\Views\rubros\editaRubro.php on line 11.
+ 1 APPPATH\Views\rubros\editaRubro.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cuenta', 'APPPATH\\Views\\rubros\\editaRubro.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\rubros\\editaRubro.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/editarubro', [], true)
+ 5 APPPATH\Controllers\Rubros.php(84): view('rubros/editarubro', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:12:17 --> Undefined array key "descripcion"
+in APPPATH\Views\rubros\editaRubro.php on line 29.
+ 1 APPPATH\Views\rubros\editaRubro.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "descripcion"', 'APPPATH\\Views\\rubros\\editaRubro.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\rubros\\editaRubro.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('rubros/editarubro', [], true)
+ 5 APPPATH\Controllers\Rubros.php(86): view('rubros/editarubro', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Rubros->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
