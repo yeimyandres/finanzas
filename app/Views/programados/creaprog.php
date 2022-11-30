@@ -9,17 +9,14 @@
                 <div class="form-group">
                     <label for="tipomovimiento">Tipo de movimiento:</label>
                     <select name="tipomovimiento" id="tipomovimiento">
-                        <option value="E">Egreso</option>
-                        <option value="I">Ingreso</option>
+                        <option value="0">Seleccione tipo de cuenta</option>
+                        <option value="E">Cuenta de Egreso</option>
+                        <option value="I">Cuenta de Ingreso</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="cuenta">Cuenta:</label>
-                    <select name="cuenta" id="cuenta"></select>
+                <div class="form-group" id="cbocuentas">
                 </div>
-                <div class="form-group">
-                    <label for="rubro">Rubro:</label>
-                    <select name="rubro" id="rubro"></select>
+                <div class="form-group" id="cborubros">
                 </div>
                 <div class="form-group">
                     <label for="detalle">Detalle del pago:</label>
@@ -37,4 +34,17 @@
     </div>
 </div>
 
-<?=$pie?>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="../inc/js/programados.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#tipomovimiento').change(function(){
+            cargacuentas($(this).val());
+        });
+    });
+</script>
+</body>
+</html>
+
