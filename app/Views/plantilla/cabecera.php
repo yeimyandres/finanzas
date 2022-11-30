@@ -23,7 +23,7 @@
                     <a class="nav-link" href="<?=base_url('listarubros')?>">Rubros</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?=base_url('listapresupuestos')?>">Presupuestos</a>
+                    <a class="nav-link" href="<?=base_url('listaprogramados')?>">Programado</a>
                 </li>
             </ul>
         </div>

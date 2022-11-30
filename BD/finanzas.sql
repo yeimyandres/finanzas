@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2022 a las 22:39:23
+-- Tiempo de generación: 30-11-2022 a las 15:31:57
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -65,23 +65,16 @@ INSERT INTO `cuentas` (`id`, `nombre`, `tipomovimiento`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `presupuestos`
+-- Estructura de tabla para la tabla `programacion`
 --
 
-CREATE TABLE `presupuestos` (
+CREATE TABLE `programacion` (
   `id` int(11) NOT NULL,
-  `creado` date NOT NULL,
-  `vigencia` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mes` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL
+  `fecha` date NOT NULL,
+  `idrubro` int(11) NOT NULL,
+  `detalle` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `valor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `presupuestos`
---
-
-INSERT INTO `presupuestos` (`id`, `creado`, `vigencia`, `mes`, `descripcion`) VALUES
-(3, '2022-11-29', '2023', '01', 'Presupuesto enero de 2023');
 
 -- --------------------------------------------------------
 
@@ -168,9 +161,9 @@ ALTER TABLE `cuentas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `presupuestos`
+-- Indices de la tabla `programacion`
 --
-ALTER TABLE `presupuestos`
+ALTER TABLE `programacion`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -190,10 +183,10 @@ ALTER TABLE `cuentas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT de la tabla `presupuestos`
+-- AUTO_INCREMENT de la tabla `programacion`
 --
-ALTER TABLE `presupuestos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `programacion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `rubros`
