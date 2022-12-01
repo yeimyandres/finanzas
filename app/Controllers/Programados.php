@@ -113,7 +113,55 @@ class Programados extends Controller{
 
         return $this->response->redirect(site_url('/listaprogramados'));
 
-    
+    }
+
+    public function importarcuentas(){
+        
+        $cuenta = new Cuenta();
+
+        $tipomov = $this->request->getPost('tipomov');
+
+        $datoscuenta = $cuenta->where('tipomovimiento',$tipomov)->findAll();
+
+        $respuesta = "<label for='cuentas'>Cuentas:";
+        $respuesta .= "</label>";
+        $respuesta .=  "<select name='cuentas' id='cuentas'>";
+        $respuesta .= "<option value='0'>Seleccione una cuenta...</option>";
+
+        foreach($datoscuenta as $registro):
+
+            $respuesta .= "<option value='".$registro['id']."'>".$registro['nombre']."</option>";
+        
+        endforeach;
+
+        $respuesta .= "</select>";
+
+        return $respuesta;
+
+    }
+
+    public function importarrubros(){
+        
+        $rubro = new Rubro();
+
+        $idcuenta = $this->request->getPost('idcuenta');
+
+        $datosrubro = $rubro->where('idcuenta',$idcuenta)->findAll();
+
+        $respuesta = "<label for='rubros'>Rubros: </label>";
+        $respuesta .=  "<select name='rubros' id='rubros'>";
+        $respuesta .= "<option value='0'>Seleccione un rubro...</option>";
+
+        foreach($datosrubro as $registro):
+
+            $respuesta .= "<option value='".$registro['id']."'>".$registro['nombre']."</option>";
+        
+        endforeach;
+
+        $respuesta .= "</select>";
+
+        return $respuesta;
+
     }
 
 }

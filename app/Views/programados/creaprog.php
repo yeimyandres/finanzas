@@ -5,7 +5,7 @@
         <h5 class="card-title">Ingresar datos de pago a programar</h5>
         <p class="card-text">
 
-            <form method="post" action="<?=site_url('/guardaprogramado')?>" enctype="multipart/form-data">
+            <form method="post" action="<?=base_url('/guardaprogramado')?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="tipomovimiento">Tipo de movimiento:</label>
                     <select name="tipomovimiento" id="tipomovimiento">
@@ -37,11 +37,14 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="../inc/js/programados.js"></script>
+<script src="<?=base_url('inc/js/programados.js')?>"></script>
 <script>
     $(document).ready(function(){
         $('#tipomovimiento').change(function(){
-            cargacuentas($(this).val());
+            urlbasec = "<?php echo base_url('index.php/programados/importarcuentas'); ?>";
+            urlbaser = "<?php echo base_url('index.php/programados/importarrubros'); ?>";
+            tipomovimiento = $(this).val();
+            cargacuentas(tipomovimiento,urlbasec,urlbaser);
         });
     });
 </script>

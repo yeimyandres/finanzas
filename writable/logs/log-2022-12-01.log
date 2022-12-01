@@ -1,0 +1,187 @@
+CRITICAL - 2022-12-01 13:02:30 --> Class "App\Controllers\mysqli" not found
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->traecuentas()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:03:04 --> Class "App\Controllers\mysqli" not found
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->traecuentas()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:08:44 --> Class "App\Controllers\mysqli" not found
+in APPPATH\Controllers\Programados.php on line 123.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->traecuentas()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:08:49 --> Class "App\Controllers\mysqli" not found
+in APPPATH\Controllers\Programados.php on line 123.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->traecuentas()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:09:34 --> Class "App\Controllers\mysqli" not found
+in APPPATH\Controllers\Programados.php on line 123.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->traecuentas()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:10:29 --> Class "App\Controllers\mysqli" not found
+in APPPATH\Controllers\Programados.php on line 123.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->traecuentas()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:31:32 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:33:09 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:35:51 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:51:30 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 13:53:02 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:19:10 --> syntax error, unexpected token ","
+in APPPATH\Models\Cuenta.php on line 18.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Models\\Cuenta.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Cuenta')
+ 3 APPPATH\Controllers\Cuentas.php(11): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Cuenta')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Cuentas->index()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cuentas))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:27:14 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:33:09 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:34:33 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:34:50 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:48:33 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:50:13 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:50:55 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:52:09 --> Undefined property: App\Controllers\Programados::$Programado
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Programado', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:52:14 --> Undefined property: App\Controllers\Programados::$Programado
+in APPPATH\Controllers\Programados.php on line 121.
+ 1 APPPATH\Controllers\Programados.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Programado', 'APPPATH\\Controllers\\Programados.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 14:56:17 --> Undefined property: App\Controllers\Programados::$Cuenta
+in APPPATH\Controllers\Programados.php on line 124.
+ 1 APPPATH\Controllers\Programados.php(124): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Programados::$Cuenta', 'APPPATH\\Controllers\\Programados.php', 124)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 15:00:00 --> Call to undefined method App\Models\Cuenta::getCuentas
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Programados.php(125): CodeIgniter\Model->__call('getCuentas', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 15:00:32 --> Object of class App\Models\Cuenta could not be converted to string
+in APPPATH\Controllers\Programados.php on line 125.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 15:00:46 --> syntax error, unexpected variable "$cuenta"
+in APPPATH\Controllers\Programados.php on line 125.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Programados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\programados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\programados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\programados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 15:07:11 --> Undefined constant "App\Controllers\JSON"
+in APPPATH\Controllers\Programados.php on line 127.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->importarcuentas()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-01 15:32:05 --> syntax error, unexpected variable "$respuesta"
+in APPPATH\Controllers\Programados.php on line 127.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Programados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\programados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\programados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\programados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
