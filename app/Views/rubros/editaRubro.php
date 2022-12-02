@@ -11,14 +11,16 @@ Formulario de editar
                 <input type="hidden" name="id" value="<?=$rubro['id'];?>">
 
                 <div class="form-group">
-                    <label for="cuenta">Cuenta:</label>
-                    <select name="cuenta" id="cuenta">
-                    <?php foreach($cuentas as $cuenta):?>
-                        <option value="<?=$cuenta['id'];?>">
-                            <?=$cuenta['nombre'];?>
-                        </option>
-                    <?php endforeach; ?>                            
+                    <select class='custom-select' name="tipomovimiento" id="tipomovimiento">
+                        <option value="0">Seleccione un tipo de cuenta...</option>
+                        <option value="I">Cuenta de ingreso</option>
+                        <option value="E">Cuenta de egreso</option>
                     </select>
+                </div>
+
+                <input type="hidden" name="idcuenta" id="idcuenta" value="<?=$rubro['idcuenta'];?>">
+
+                <div class="form-group" id='cbocuentas'>
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre Rubro:</label>
@@ -37,4 +39,18 @@ Formulario de editar
     </div>
 </div>
 
-<?=$pie?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="<?=base_url('inc/js/rubros.js')?>"></script>
+<script>
+    $(document).ready(function(){
+        $('#tipomovimiento').change(function(){
+            urlbase = "<?php echo base_url('index.php/rubros/importarcuentase'); ?>";
+            idcuenta = $("#idcuenta").val();
+            alert(idcuenta);
+            tipomovimiento = $(this).val();
+            cargacuentase(tipomovimiento,urlbase,idcuenta);
+        });
+    });
+</script>
+</body>
+</html>

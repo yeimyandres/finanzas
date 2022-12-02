@@ -1,0 +1,153 @@
+CRITICAL - 2022-12-02 08:50:59 --> Allowed fields must be specified for model: App\Models\Programado
+in SYSTEMPATH\BaseModel.php on line 1160.
+ 1 SYSTEMPATH\BaseModel.php(1160): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Programado')
+ 2 SYSTEMPATH\BaseModel.php(724): CodeIgniter\BaseModel->doProtectFields([...])
+ 3 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert([...], true)
+ 4 APPPATH\Controllers\Programados.php(61): CodeIgniter\Model->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->guardar()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 08:52:00 --> Cannot use object of type stdClass as array
+in APPPATH\Views\programados\listaprog.php on line 22.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('programados/listaprog', [], true)
+ 4 APPPATH\Controllers\Programados.php(23): view('programados/listaprog', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 08:59:56 --> Cannot use object of type stdClass as array
+in APPPATH\Views\programados\listaprog.php on line 23.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('programados/listaprog', [], true)
+ 4 APPPATH\Controllers\Programados.php(23): view('programados/listaprog', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 09:18:11 --> Undefined variable $ingresos
+in APPPATH\Views\programados\listaprog.php on line 38.
+ 1 APPPATH\Views\programados\listaprog.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ingresos', 'APPPATH\\Views\\programados\\listaprog.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\programados\\listaprog.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('programados/listaprog', [], true)
+ 5 APPPATH\Controllers\Programados.php(23): view('programados/listaprog', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-02 13:34:20 --> mysqli_sql_exception: Column 'idcuenta' cannot be null in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ru...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ru...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ru...')
+#3 D:\xampp\htdocs\finanzas\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ru...', Array, false)
+#4 D:\xampp\htdocs\finanzas\system\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\xampp\htdocs\finanzas\system\BaseModel.php(749): CodeIgniter\Model->doInsert(Array)
+#6 D:\xampp\htdocs\finanzas\system\Model.php(667): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\xampp\htdocs\finanzas\app\Controllers\Rubros.php(54): CodeIgniter\Model->insert(Array)
+#8 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Rubros->guardar()
+#9 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rubros))
+#10 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-02 13:50:27 --> syntax error, unexpected variable "$idcuenta", expecting "("
+in APPPATH\Controllers\Rubros.php on line 165.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Rubros.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Rubros')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Rubros')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Rubros', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-02 13:55:40 --> mysqli_sql_exception: Table 'finanzas.programacion' doesn't exist in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('select r.nombre...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('select r.nombre...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('select r.nombre...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('select r.nombre...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Programados.php(16): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Programados->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-02 13:55:40 --> Call to a member function getResult() on bool
+in APPPATH\Views\programados\listaprog.php on line 23.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('programados/listaprog', [], true)
+ 4 APPPATH\Controllers\Programados.php(23): view('programados/listaprog', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-02 13:57:46 --> mysqli_sql_exception: Table 'finanzas.programacion' doesn't exist in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('select r.nombre...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('select r.nombre...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('select r.nombre...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('select r.nombre...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Programados.php(16): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Programados->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-02 13:57:46 --> Call to a member function getResult() on bool
+in APPPATH\Views\programados\listaprog.php on line 23.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('programados/listaprog', [], true)
+ 4 APPPATH\Controllers\Programados.php(23): view('programados/listaprog', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-02 13:58:01 --> mysqli_sql_exception: Table 'finanzas.programacion' doesn't exist in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('select r.nombre...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('select r.nombre...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('select r.nombre...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('select r.nombre...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Programados.php(16): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Programados->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-02 13:58:01 --> Call to a member function getResult() on bool
+in APPPATH\Views\programados\listaprog.php on line 23.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('programados/listaprog', [], true)
+ 4 APPPATH\Controllers\Programados.php(23): view('programados/listaprog', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 14:06:09 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, string given
+in APPPATH\Views\programados\listaprog.php on line 26.
+ 1 APPPATH\Views\programados\listaprog.php(26): date_format('2022-11-25', 'j de M de Y')
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\programados\\listaprog.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('programados/listaprog', [], true)
+ 5 APPPATH\Controllers\Programados.php(23): view('programados/listaprog', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-02 14:21:16 --> Undefined variable $programados
+in APPPATH\Views\programados\editaprog.php on line 23.
+ 1 APPPATH\Views\programados\editaprog.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $programados', 'APPPATH\\Views\\programados\\editaprog.php', 23)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\programados\\editaprog.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('programados/editaprog', [], true)
+ 5 APPPATH\Controllers\Programados.php(91): view('programados/editaprog', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Programados->editar('2')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Programados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

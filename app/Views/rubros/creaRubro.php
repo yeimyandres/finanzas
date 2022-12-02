@@ -7,15 +7,16 @@ Formulario de crear
         <p class="card-text">
 
             <form method="post" action="<?=site_url('/guardarubro')?>" enctype="multipart/form-data">
+
                 <div class="form-group">
-                    <label for="cuenta">Cuenta:</label>
-                    <select name="cuenta" id="cuenta">
-                    <?php foreach($cuentas as $cuenta):?>
-                        <option value="<?=$cuenta['id'];?>">
-                            <?=$cuenta['nombre'];?>
-                        </option>
-                    <?php endforeach; ?>                            
+                    <select class='custom-select' name="tipomovimiento" id="tipomovimiento">
+                        <option value="0">Seleccione un tipo de cuenta...</option>
+                        <option value="I">Cuenta de ingreso</option>
+                        <option value="E">Cuenta de egreso</option>
                     </select>
+                </div>
+
+                <div class="form-group" id='cbocuentas'>
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre Rubro:</label>
@@ -33,4 +34,16 @@ Formulario de crear
     </div>
 </div>
 
-<?=$pie?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="<?=base_url('inc/js/rubros.js')?>"></script>
+<script>
+    $(document).ready(function(){
+        $('#tipomovimiento').change(function(){
+            urlbase = "<?php echo base_url('index.php/rubros/importarcuentas'); ?>";
+            tipomovimiento = $(this).val();
+            cargacuentas(tipomovimiento,urlbase);
+        });
+    });
+</script>
+</body>
+</html>

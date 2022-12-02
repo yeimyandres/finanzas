@@ -6,7 +6,7 @@
 
 <table class="table table-light">
     <thead class="thead-light">
-        <tr>
+        <tr align='center'>
             <th>Cuenta</th>
             <th>Tipo Movimiento</th>
             <th>Rubro</th>
@@ -31,8 +31,8 @@
                 <td><?php echo $rubro->nombre;?></td>
                 <td><?php echo $rubro->descripcion;?></td>
                 <td>
-                    <a href="<?=base_url('editarubro/'.$rubro->id);?>" class="btn btn-info" type="button">Editar</a>    
-                    <a href="<?=base_url('borrarubro/'.$rubro->id);?>" class="btn btn-danger" type="button">Borrar</a>    
+                    <a href="<?=base_url('editarubro/'.$rubro->id);?>" class="btn btn-info btn-sm" type="button">Editar</a>    
+                    <a href="<?=base_url('borrarubro/'.$rubro->id);?>" class="btn btn-danger btn-sm" type="button">Borrar</a>    
                 </td>
             </tr>
 

@@ -8,7 +8,7 @@
             <form method="post" action="<?=base_url('/guardaprogramado')?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="tipomovimiento">Tipo de movimiento:</label>
-                    <select name="tipomovimiento" id="tipomovimiento">
+                    <select class='custom-select' name="tipomovimiento" id="tipomovimiento">
                         <option value="0">Seleccione tipo de cuenta</option>
                         <option value="E">Cuenta de Egreso</option>
                         <option value="I">Cuenta de Ingreso</option>
@@ -17,6 +17,10 @@
                 <div class="form-group" id="cbocuentas">
                 </div>
                 <div class="form-group" id="cborubros">
+                </div>
+                <div class="form-group">
+                    <label for="fechalimite">Fecha límite pago:</label>
+                    <input id="fechalimite" class="form-control" type="date" name="fechalimite">
                 </div>
                 <div class="form-group">
                     <label for="detalle">Detalle del pago:</label>

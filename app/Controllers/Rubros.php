@@ -46,7 +46,7 @@ class Rubros extends Controller{
         }else{
 
             $datos=[
-                'idcuenta'=>$this->request->getVar('cuenta'),
+                'idcuenta'=>$this->request->getVar('cuentas'),
                 'nombre'=>$this->request->getVar('nombre'),
                 'descripcion'=>$this->request->getVar('descripcion')
             ];
@@ -78,10 +78,6 @@ class Rubros extends Controller{
 
         $datos['rubro'] = $rubro->where('id',$id)->first();
 
-        $cuenta = new cuenta();
-
-        $datos['cuentas'] = $cuenta->orderBy('tipomovimiento DESC, nombre ASC')->findAll();
-
         $datos['cabecera']=view('plantilla/cabecera');
         $datos['pie']=view('plantilla/pie');
 
@@ -94,7 +90,7 @@ class Rubros extends Controller{
         $rubro = new rubro();
 
         $datos=[
-            'idcuenta'=>$this->request->getVar('cuenta'),
+            'idcuenta'=>$this->request->getVar('cuentas'),
             'nombre'=>$this->request->getVar('nombre'),
             'descripcion'=>$this->request->getVar('descripcion')
         ];
@@ -120,4 +116,63 @@ class Rubros extends Controller{
 
     }
 
+    public function importarcuentas(){
+        
+        $cuenta = new Cuenta();
+
+        $tipomov = $this->request->getPost('tipomov');
+
+        $datoscuenta = $cuenta->where('tipomovimiento',$tipomov)->orderBY('nombre','ASC')->findAll();
+
+        $respuesta = "<label for='cuentas'>Cuentas:";
+        $respuesta .= "</label>";
+        $respuesta .=  "<select class='custom-select' name='cuentas' id='cuentas'>";
+        $respuesta .= "<option value='0'>Seleccione una cuenta...</option>";
+
+        foreach($datoscuenta as $registro):
+
+            $respuesta .= "<option value='".$registro['id']."'>".$registro['nombre']."</option>";
+        
+        endforeach;
+
+        $respuesta .= "</select>";
+
+        return $respuesta;
+
+    }
+
+    public function importarcuentase(){
+        
+        $cuenta = new Cuenta();
+
+        $tipomov = $this->request->getPost('tipomov');
+        $idcuenta = $this->request->getPost('idcuenta');
+
+        $datoscuenta = $cuenta->where('tipomovimiento',$tipomov)->orderBY('nombre','ASC')->findAll();
+
+        $respuesta = "<label for='cuentas'>Cuentas:";
+        $respuesta .= "</label>";
+        $respuesta .= "<select class='custom-select' name='cuentas' id='cuentas'>";
+        $respuesta .= "<option value='0'>Seleccione una cuenta...</option>";
+
+        foreach($datoscuenta as $registro):
+
+            $respuesta .= "<option value='".$registro['id']."'";
+            if ($idcuenta == $registro['id']) {
+                $respuesta .= " selected>".$registro['nombre']."</option>";
+            }
+            else{
+                $respuesta .= ">".$registro['nombre']."</option>";
+            }
+
+            
+        
+        endforeach;
+
+        $respuesta .= "</select>";
+
+        return $respuesta;
+
+    }
+    
 }

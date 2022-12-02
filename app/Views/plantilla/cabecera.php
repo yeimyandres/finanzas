@@ -25,6 +25,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="<?=base_url('listaprogramados')?>">Programado</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?=base_url('listaejecutados')?>">Ejecutado</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?=base_url('listabalances')?>">Balance</a>
+                </li>
             </ul>
         </div>
     </nav>

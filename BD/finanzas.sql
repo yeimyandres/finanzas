@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2022 a las 15:31:57
+-- Tiempo de generación: 02-12-2022 a las 22:08:17
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `finanzas`
 --
+CREATE DATABASE IF NOT EXISTS `finanzas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `finanzas`;
 
 -- --------------------------------------------------------
 
@@ -27,9 +29,10 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `cuentas`
 --
 
+DROP TABLE IF EXISTS `cuentas`;
 CREATE TABLE `cuentas` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tipomovimiento` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -38,40 +41,38 @@ CREATE TABLE `cuentas` (
 --
 
 INSERT INTO `cuentas` (`id`, `nombre`, `tipomovimiento`) VALUES
-(1, 'Salario', 'I'),
-(2, 'Alimentación', 'E'),
-(4, 'Transporte', 'E'),
-(5, 'Consignaciones', 'I'),
-(6, 'Salud', 'E'),
-(7, 'Otros Ingresos', 'I'),
-(8, 'Saldos', 'I'),
-(9, 'Compartir', 'E'),
-(10, 'Créditos', 'E'),
-(11, 'Educación', 'E'),
-(12, 'Impuestos', 'E'),
-(13, 'Mascotas', 'E'),
-(14, 'Recreación', 'E'),
-(15, 'Servicios Públicos', 'E'),
-(16, 'Telecomunicaciones', 'E'),
-(17, 'Cuidado Personal', 'E'),
-(18, 'Inversión', 'E'),
-(19, 'Reservas', 'E'),
-(20, 'Muebles', 'E'),
-(21, 'Tecnología', 'E'),
-(22, 'Vestido', 'E'),
-(23, 'Costos Bancarios', 'E'),
-(24, 'Gastos no Previstos', 'E');
+(1, 'Laborales', 'I'),
+(3, 'Otros Ingresos', 'I'),
+(4, 'Comida', 'E'),
+(5, 'Compartir', 'E'),
+(6, 'Créditos', 'E'),
+(7, 'Educación', 'E'),
+(8, 'Impuestos', 'E'),
+(9, 'Mascotas', 'E'),
+(10, 'Recreación', 'E'),
+(11, 'Salud y Seguridad Social', 'E'),
+(12, 'Servicios Públicos', 'E'),
+(13, 'Tecnología', 'E'),
+(14, 'Transporte', 'E'),
+(15, 'Cuidado Personal', 'E'),
+(16, 'Inversiones', 'E'),
+(17, 'Reservas futuras', 'E'),
+(18, 'Hogar', 'E'),
+(19, 'Costos Bancarios', 'E'),
+(20, 'Excedentes', 'I');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `programacion`
+-- Estructura de tabla para la tabla `ejecutados`
 --
 
-CREATE TABLE `programacion` (
+DROP TABLE IF EXISTS `ejecutados`;
+CREATE TABLE `ejecutados` (
   `id` int(11) NOT NULL,
+  `idprogramado` int(11) NOT NULL,
+  `idfuente` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `idrubro` int(11) NOT NULL,
   `detalle` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `valor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -79,14 +80,60 @@ CREATE TABLE `programacion` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `fuentes`
+--
+
+DROP TABLE IF EXISTS `fuentes`;
+CREATE TABLE `fuentes` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipofuente` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `programados`
+--
+
+DROP TABLE IF EXISTS `programados`;
+CREATE TABLE `programados` (
+  `id` int(11) NOT NULL,
+  `idrubro` int(11) NOT NULL,
+  `fechalimite` date NOT NULL,
+  `detalle` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `valor` int(11) NOT NULL,
+  `estado` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'P'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `programados`
+--
+
+INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `estado`) VALUES
+(2, 2, '2022-11-25', 'Salario mensual', 6145000, 'P'),
+(3, 3, '2022-11-25', 'Saldo en banco noviembre 2022', 67000, 'P'),
+(4, 5, '2022-12-01', 'Devolución suscripción Netflix y Amazon Prime Video', 38125, 'P'),
+(5, 6, '2022-12-24', 'Prima de navidad 2022', 7900000, 'P'),
+(7, 7, '2022-11-26', 'Factura Segundo Piso', 14802, 'P'),
+(8, 7, '2022-11-26', 'Factura Primer Piso', 20829, 'P'),
+(9, 8, '2022-11-27', 'Aporte a mamá Stella', 100000, 'P'),
+(10, 9, '2022-11-30', 'Aporte mensual', 800000, 'P'),
+(11, 10, '2022-12-01', 'Pago mensual Netflix y Prime Video', 56800, 'P'),
+(12, 11, '2022-12-01', 'Pago mensual', 298000, 'P');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `rubros`
 --
 
+DROP TABLE IF EXISTS `rubros`;
 CREATE TABLE `rubros` (
   `id` int(11) NOT NULL,
   `idcuenta` int(11) NOT NULL,
-  `nombre` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -94,61 +141,17 @@ CREATE TABLE `rubros` (
 --
 
 INSERT INTO `rubros` (`id`, `idcuenta`, `nombre`, `descripcion`) VALUES
-(5, 7, 'Consignaciones de terceros', 'Consignaciones realizadas a cuenta bancaria por terceros'),
-(6, 7, 'No presupuestados', 'Ingresos no contemplados en el presupuesto'),
-(7, 1, 'Sueldo CGR', 'Salario neto mensual recibido por CGR'),
-(8, 8, 'Banco', 'Saldo ejercicio mes anterior en cuenta bancaria'),
-(9, 8, 'Efectivo', 'Saldo ejercicio mes anterior en efectivo'),
-(10, 2, 'Comidas familiares', 'Paseos y actividades en familia fuera de la casa'),
-(11, 2, 'Comidas por fuera', 'Comidas no preparadas en casa'),
-(12, 2, 'Mercado', 'Insumos, frutas, verduras, carnes, etc para preparación de comidas en casa'),
-(13, 2, 'Mecato', 'Golosinas, dulces y similares'),
-(14, 2, 'Otros no presupuestados', 'Adquisición de comida o alimentos no contemplados en presupuesto'),
-(15, 9, 'Aportes a familia', 'Dinero aportado a miembros de la familia'),
-(16, 9, 'Celebraciones familiares', 'Celebración en familia de cumpleaños o fiestas'),
-(17, 9, 'Celebraciones no familiares', 'Eventos de amigos o de oficina'),
-(18, 9, 'Regalos no familiares', 'Regalos u obsequios a personas no familiares'),
-(19, 23, 'Cuota bancaseguros', 'Valor mensual debitado de cuenta - seguro de vida Bancolombia'),
-(20, 23, 'Manejo cuenta de ahorros', 'Valor debitado mensual - manejo cuenta Bancolombia'),
-(21, 10, 'Bancolombia', 'Pago de compras realizadas con la tarjeta CMR de Falabella'),
-(22, 10, 'Fondo Nacional del Ahorro', 'Créditos adquiridos con el Fondo Nacional del Ahorro'),
-(23, 10, 'Tarjeta Tuya', 'Pago de compras realizadas con la tarjeta Tuya de Éxito'),
-(24, 10, 'Tarjeta CMR Falabella', 'Compras realizadas con tarjeta CMR de Falabella'),
-(25, 10, 'Créditos personales', 'Créditos adquiridos con terceros diferentes a entidades bancarias'),
-(26, 17, 'Corte de cabello', 'Pago de cortes de cabello en peluquería'),
-(27, 11, 'Colegio Campestre Anglo Hispano', 'Aporte ahorro fondo para educación Andrés Daniel en CCAH'),
-(28, 11, 'Otros no presupuestados', 'Gastos de educación no contemplados en el presupuesto'),
-(29, 12, 'Renta', 'Pago impuesto anual a la renta - DIAN'),
-(30, 12, 'Vehículo', 'Pago impuesto anual - Gobernación Valle del Cauca'),
-(31, 12, 'Vivienda', 'Pago impuestos por vivienda - Alcaldía Distrital Santiago de Cali'),
-(32, 13, 'Alimento blando', 'Pago por comida para mascotas - alimento blando'),
-(33, 13, 'Alimento duro', 'Pago por comida para mascotas - alimento duro o sólido'),
-(34, 13, 'Arena', 'Pago por arena para gatos'),
-(35, 13, 'Salud', 'Pago por gastos de salud para mascotas'),
-(36, 13, 'Otros no presupuestados', 'Pago por gastos de mascotas no contemplados en presupuesto'),
-(37, 20, 'Muebles hogar', 'Compra o adquisición de muebles para el hogar'),
-(38, 14, 'Actividades familiares', 'Actividades recreativas con la familia'),
-(39, 14, 'Actividades no familiares', 'Actividades recreativas con personas no familiares'),
-(40, 19, 'Reservas futuras', 'Reserva de dinero para pagos de obligaciones en meses posteriores'),
-(41, 6, 'Emermédica', 'Pago mensual servicio de emergencias médicas'),
-(42, 6, 'EPS', 'Pago mensual servicio de salud EPS'),
-(43, 5, 'PAC', 'Pago mensual Plan de Atención Complementaria'),
-(44, 6, 'PROEXA', 'Pagos afiliación a salud'),
-(45, 6, 'Otros no presupuestados', 'Gastos de salud no contemplados en presupuesto'),
-(46, 15, 'Emcali', 'Pago mensual servicios de agua y luz'),
-(47, 15, 'Gases de Occidente', 'Pago mensual servicio de gas domiciliario'),
-(48, 21, 'Microsoft Office 365 - Familia', 'Pago anual suscripción paquete ofimático'),
-(49, 16, 'TIGO', 'Pago mensual servicios de telefonía móvil, internet y televisión por cable - TIGO'),
-(50, 16, 'WOM', 'Pago mensual servicio de telefonía móvil - WOM'),
-(51, 4, 'Combustible', 'Pago por gasolina para vehículo'),
-(52, 4, 'Taller', 'Pago por mantenimiento, taller y/o repuestos para vehículo'),
-(53, 4, 'Parqueadero', 'Gastos por pago de parqueadero de vehículo'),
-(54, 4, 'Otros no presupuestados', 'Pagos por concepto de vehículo no contemplados en presupuesto'),
-(55, 16, 'TV Streaming', 'Pagos mensuales o anuales por concepto de TV por streaming'),
-(56, 24, 'Imprevistos', 'Pagos por gastos no contemplados en otras categorías'),
-(57, 18, 'Inversiones bancarias', 'Inversiones realizadas a través de entidades bancarias'),
-(58, 18, 'Otras inversiones', 'Inversiones realizadas a través de terceros - Entidades no bancarias o particulares'),
-(59, 22, 'Ropa y accesorios', 'Adquisición de ropa y/o accesorios');
+(1, 4, 'Mercado', 'Adquisición de alimentos, insumos y víveres para preparar en casa'),
+(2, 1, 'Salario CGR', 'Sueldo percibido mensualmente por trabajar en CGR'),
+(3, 20, 'Saldo Banco', 'Saldo disponible en Banco mes anterior'),
+(4, 20, 'Saldo Efectivo', 'Saldo disponible en Efectivo mes anterior'),
+(5, 3, 'Suscripción TV Streaming', 'Pago mensual suscripción a servicio de TV por streaming'),
+(6, 1, 'Prima Navidad', 'Pago por prima de navidad recibida en Diciembre'),
+(7, 12, 'Gases de Occidente', 'Pagos mensuales facturas del servicio de gas'),
+(8, 5, 'Aportes a Familia', 'Aportes económicos realizados a miembros de la familia'),
+(9, 7, 'Ahorro Andrés Daniel', 'Aportes a Fondo gastos educativos Andrés Daniel'),
+(10, 13, 'TV Streaming', 'Pago mensual servicio de TV por Streaming'),
+(11, 11, 'PROEXA', 'Pago mensual aporte salud y pensiones');
 
 --
 -- Índices para tablas volcadas
@@ -161,9 +164,21 @@ ALTER TABLE `cuentas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `programacion`
+-- Indices de la tabla `ejecutados`
 --
-ALTER TABLE `programacion`
+ALTER TABLE `ejecutados`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `fuentes`
+--
+ALTER TABLE `fuentes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `programados`
+--
+ALTER TABLE `programados`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -180,19 +195,31 @@ ALTER TABLE `rubros`
 -- AUTO_INCREMENT de la tabla `cuentas`
 --
 ALTER TABLE `cuentas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT de la tabla `programacion`
+-- AUTO_INCREMENT de la tabla `ejecutados`
 --
-ALTER TABLE `programacion`
+ALTER TABLE `ejecutados`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `fuentes`
+--
+ALTER TABLE `fuentes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `programados`
+--
+ALTER TABLE `programados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `rubros`
 --
 ALTER TABLE `rubros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

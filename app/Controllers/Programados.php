@@ -13,7 +13,7 @@ class Programados extends Controller{
 
         $programado = new programado();
 
-        $datos['programados'] = $programado->query('select r.nombre, p.id, p.fecha, p.detalle, p.valor, c.tipomovimiento, c.nombre as nomcuenta from programacion as p, rubros as r, cuentas as c where p.idrubro = r.id and r.idcuenta = c.id order by c.tipomovimiento DESC, c.nombre ASC');
+        $datos['programados'] = $programado->query('select r.nombre, p.id, p.fechalimite, p.detalle, p.valor, p.estado, c.tipomovimiento, c.nombre as nomcuenta from programados as p, rubros as r, cuentas as c where p.idrubro = r.id and r.idcuenta = c.id order by c.tipomovimiento DESC, c.nombre ASC');
 
         //$datos['programados'] = $programado->orderBy('tipomovimiento DESC, nombre ASC')->findAll();
 
@@ -37,7 +37,9 @@ class Programados extends Controller{
         $programado = new programado();
 
         $validacion = $this->validate([
-            'nombre' => 'required|min_length[3]'
+            'fechalimite' => 'required|min_length[10]',
+            'detalle' => 'required|min_length[3]',
+            'valor' => 'required|min_length[4]'
         ]);
 
         if(!$validacion){
@@ -48,9 +50,13 @@ class Programados extends Controller{
 
         }else{
 
+            $fecha = date("Y-m-d");
+
             $datos=[
-                'nombre'=>$this->request->getVar('nombre'),
-                'tipomovimiento'=>$this->request->getVar('movimiento')
+                'fechalimite'=>$this->request->getVar('fechalimite'),
+                'idrubro'=>$this->request->getVar('rubros'),
+                'detalle'=>$this->request->getVar('detalle'),
+                'valor'=>$this->request->getVar('valor')
             ];
      
             $programado->insert($datos);
@@ -121,11 +127,11 @@ class Programados extends Controller{
 
         $tipomov = $this->request->getPost('tipomov');
 
-        $datoscuenta = $cuenta->where('tipomovimiento',$tipomov)->findAll();
+        $datoscuenta = $cuenta->where('tipomovimiento',$tipomov)->orderBY('nombre','ASC')->findAll();
 
         $respuesta = "<label for='cuentas'>Cuentas:";
         $respuesta .= "</label>";
-        $respuesta .=  "<select name='cuentas' id='cuentas'>";
+        $respuesta .=  "<select class='custom-select' name='cuentas' id='cuentas'>";
         $respuesta .= "<option value='0'>Seleccione una cuenta...</option>";
 
         foreach($datoscuenta as $registro):
@@ -146,10 +152,10 @@ class Programados extends Controller{
 
         $idcuenta = $this->request->getPost('idcuenta');
 
-        $datosrubro = $rubro->where('idcuenta',$idcuenta)->findAll();
+        $datosrubro = $rubro->where('idcuenta',$idcuenta)->orderBy('nombre','ASC')->findAll();
 
         $respuesta = "<label for='rubros'>Rubros: </label>";
-        $respuesta .=  "<select name='rubros' id='rubros'>";
+        $respuesta .=  "<select class='custom-select' name='rubros' id='rubros'>";
         $respuesta .= "<option value='0'>Seleccione un rubro...</option>";
 
         foreach($datosrubro as $registro):
