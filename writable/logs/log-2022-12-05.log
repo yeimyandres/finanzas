@@ -228,3 +228,80 @@ in APPPATH\Views\ejecutados\creaejec.php on line 27.
  7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
  8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 15:45:18 --> date() expects at least 1 argument, 0 given
+in APPPATH\Views\ejecutados\creaejec.php on line 34.
+ 1 APPPATH\Views\ejecutados\creaejec.php(34): date()
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\ejecutados\\creaejec.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/creaejec', [], true)
+ 5 APPPATH\Controllers\Ejecutados.php(41): view('ejecutados/creaejec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 15:53:00 --> Undefined property: stdClass::$valor
+in APPPATH\Views\ejecutados\listaejec.php on line 34.
+ 1 APPPATH\Views\ejecutados\listaejec.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$valor', 'APPPATH\\Views\\ejecutados\\listaejec.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\ejecutados\\listaejec.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/listaejec', [], true)
+ 5 APPPATH\Controllers\Ejecutados.php(28): view('ejecutados/listaejec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 15:56:45 --> Undefined property: stdClass::$tipomovimiento
+in APPPATH\Views\ejecutados\listaejec.php on line 36.
+ 1 APPPATH\Views\ejecutados\listaejec.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$tipomovimiento', 'APPPATH\\Views\\ejecutados\\listaejec.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\ejecutados\\listaejec.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/listaejec', [], true)
+ 5 APPPATH\Controllers\Ejecutados.php(28): view('ejecutados/listaejec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 15:57:21 --> Undefined property: stdClass::$valor
+in APPPATH\Views\ejecutados\listaejec.php on line 38.
+ 1 APPPATH\Views\ejecutados\listaejec.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$valor', 'APPPATH\\Views\\ejecutados\\listaejec.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\ejecutados\\listaejec.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/listaejec', [], true)
+ 5 APPPATH\Controllers\Ejecutados.php(28): view('ejecutados/listaejec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 15:57:42 --> Undefined property: stdClass::$id
+in APPPATH\Views\ejecutados\listaejec.php on line 51.
+ 1 APPPATH\Views\ejecutados\listaejec.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id', 'APPPATH\\Views\\ejecutados\\listaejec.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\ejecutados\\listaejec.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/listaejec', [], true)
+ 5 APPPATH\Controllers\Ejecutados.php(28): view('ejecutados/listaejec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-05 15:59:08 --> mysqli_sql_exception: Unknown column 'p.idprog' in 'where clause' in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT p.id AS ...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id AS ...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id AS ...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('SELECT p.id AS ...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Ejecutados.php(23): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-05 15:59:08 --> Call to a member function getResult() on bool
+in APPPATH\Views\ejecutados\listaejec.php on line 24.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/listaejec', [], true)
+ 4 APPPATH\Controllers\Ejecutados.php(28): view('ejecutados/listaejec', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

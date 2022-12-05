@@ -30,24 +30,24 @@
                 <td align='center'><?=date_format($fecha,"j-M-Y");?></td>
                 <td align='center'><?=$ejecutado->nombref;?></td>
                 <td><?=$ejecutado->nombrer;?></td>
-                <td><?=$ejecutado->detalle;?></td>
-                <td align='right'><?=number_format($ejecutado->valor, 2);?></td>
+                <td><?=$ejecutado->valord;?></td>
+                <td align='right'><?=number_format($ejecutado->valore, 2);?></td>
                 <?php
                     if ($ejecutado->tipomovimiento == 'I'){
                         if ($ejecutado->tipofuente=='B'){
-                            $ingresosb += $ejecutado->valor;
+                            $ingresosb += $ejecutado->valore;
                         }else{
-                            $ingresose += $ejecutado->valor;
+                            $ingresose += $ejecutado->valore;
                         }
                     }else{
                         if ($ejecutado->tipofuente=='B'){
-                            $egresosb += $ejecutado->valor;
+                            $egresosb += $ejecutado->valore;
                         }else{
-                            $egresose += $ejecutado->valor;
+                            $egresose += $ejecutado->valore;
                         }
                     }
                 ?>
-                <td>
+                <td align='center'>
                     <a href="<?=base_url('editaejecutado/'.$ejecutado->id);?>" class="btn btn-info btn-sm" type="button">Editar</a>    
                     <a href="<?=base_url('borraejecutado/'.$ejecutado->id);?>" class="btn btn-danger btn-sm" type="button">Borrar</a>    
                 </td>

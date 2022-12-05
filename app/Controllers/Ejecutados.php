@@ -15,7 +15,7 @@ class ejecutados extends Controller{
 
         $ejecutado = new Ejecutado();
 
-        $insql = "SELECT p.valor AS valorp, p.detalle AS detallep, p.fechalimite, f.nombre AS nombref, f.tipofuente, r.nombre AS nombrer, c.nombre AS nombrec, e.fecha, e.detalle, e.valor AS valore, e.detalle AS valord ";
+        $insql = "SELECT p.id AS idprog, p.valor AS valorp, p.detalle AS detallep, p.fechalimite, f.nombre AS nombref, f.tipofuente, r.nombre AS nombrer, c.nombre AS nombrec, c.tipomovimiento, e.id, e.fecha, e.detalle, e.valor AS valore, e.detalle AS valord ";
         $insql .= "FROM programados AS p, fuentes AS f, rubros AS r, cuentas AS c, ejecutados AS e ";
         $insql .= "WHERE p.idrubro = r.id AND f.id = e.idfuente AND r.idcuenta = c.id AND e.idprogramado = p.id ";
         $insql .= "ORDER BY tipofuente DESC, nombrec ASC, fechalimite ASC";
@@ -43,12 +43,9 @@ class ejecutados extends Controller{
 
     public function guardar(){
 
-        $idprog = $this->request->getPost('progs');
-
         $ejecutado = new Ejecutado();
 
         $validacion = $this->validate([
-            'fecha' => 'required|min_length[10]',
             'detalle' => 'required|min_length[3]',
             'valor' => 'required|min_length[4]'
         ]);
@@ -61,11 +58,10 @@ class ejecutados extends Controller{
 
         }else{
 
-            $fecha = date("Y-m-d");
-
             $datos=[
-                'fechalimite'=>$this->request->getVar('fechalimite'),
-                'idrubro'=>$this->request->getVar('rubros'),
+                'idprogramado'=>$this->request->getVar('progs'),
+                'idfuente'=>$this->request->getVar('cbofuentes'),
+                'fecha'=>$this->request->getVar('fecha'),
                 'detalle'=>$this->request->getVar('detalle'),
                 'valor'=>$this->request->getVar('valor')
             ];
@@ -195,7 +191,7 @@ class ejecutados extends Controller{
 
             $fecha = date_create($registro['fechalimite']);
             $respuesta .= "<input class='form-check-input' type='radio' name='progs' value='".$registro['id']."'>";
-            $respuesta .= "<label class='form-check-label' for='progs'> Pago pendiente: (".date_format($fecha,"j-M-Y").") ".$registro['detalle']."</label></br>";
+            $respuesta .= "<label class='form-check-label' for='progs'> Pago pendiente: (".date_format($fecha,"j-M-Y").") ".$registro['detalle']."(".number_format($registro['valor'],2).")</label></br>";
         
         endforeach;
 

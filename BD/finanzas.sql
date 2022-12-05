@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-12-2022 a las 22:08:48
+-- Tiempo de generación: 05-12-2022 a las 23:04:45
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -72,6 +72,15 @@ CREATE TABLE `ejecutados` (
   `detalle` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `valor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ejecutados`
+--
+
+INSERT INTO `ejecutados` (`id`, `idprogramado`, `idfuente`, `fecha`, `detalle`, `valor`) VALUES
+(1, 2, 1, '2022-12-05', 'Salario mensual', 6145000),
+(2, 7, 1, '2022-12-05', 'Factura mensual', 14802),
+(3, 8, 1, '2022-12-05', 'Factura mensual', 20829);
 
 -- --------------------------------------------------------
 
@@ -202,7 +211,7 @@ ALTER TABLE `cuentas`
 -- AUTO_INCREMENT de la tabla `ejecutados`
 --
 ALTER TABLE `ejecutados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `fuentes`

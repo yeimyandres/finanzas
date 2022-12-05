@@ -23,14 +23,15 @@
                 <div class="form-group">
                     <label for="cbofuentes">Fuente del pago:</label>
                     <select class='custom-select' name="cbofuentes" id="cbofuentes">
+                        <option value="0">Seleccione fuente del pago:</option>
                         <?php foreach($fuentes as $fuente):?>
                             <option value="<?=$fuente['id']?>"><?php echo $fuente['nombre']." (".$fuente['tipofuente'].")";?></option>
                         <?php endforeach;?>    
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="fechalimite">Fecha límite pago:</label>
-                    <input id="fechalimite" class="form-control" type="date" name="fechalimite">
+                    <label for="fecha">Fecha límite pago:</label>
+                    <input id="fecha" class="form-control" type="date" name="fecha" value="<?=date('Y-m-d');?>">
                 </div>
                 <div class="form-group">
                     <label for="detalle">Detalle del pago:</label>
