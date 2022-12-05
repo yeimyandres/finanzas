@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-12-2022 a las 22:08:17
+-- Tiempo de generación: 05-12-2022 a las 22:08:48
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `finanzas`
 --
-CREATE DATABASE IF NOT EXISTS `finanzas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `finanzas`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `finanzas`;
 -- Estructura de tabla para la tabla `cuentas`
 --
 
-DROP TABLE IF EXISTS `cuentas`;
 CREATE TABLE `cuentas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -67,7 +64,6 @@ INSERT INTO `cuentas` (`id`, `nombre`, `tipomovimiento`) VALUES
 -- Estructura de tabla para la tabla `ejecutados`
 --
 
-DROP TABLE IF EXISTS `ejecutados`;
 CREATE TABLE `ejecutados` (
   `id` int(11) NOT NULL,
   `idprogramado` int(11) NOT NULL,
@@ -83,12 +79,19 @@ CREATE TABLE `ejecutados` (
 -- Estructura de tabla para la tabla `fuentes`
 --
 
-DROP TABLE IF EXISTS `fuentes`;
 CREATE TABLE `fuentes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tipofuente` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `fuentes`
+--
+
+INSERT INTO `fuentes` (`id`, `nombre`, `tipofuente`) VALUES
+(1, 'Cuenta Bancaria Yeimy', 'B'),
+(2, 'Efectivo Yeimy', 'E');
 
 -- --------------------------------------------------------
 
@@ -96,7 +99,6 @@ CREATE TABLE `fuentes` (
 -- Estructura de tabla para la tabla `programados`
 --
 
-DROP TABLE IF EXISTS `programados`;
 CREATE TABLE `programados` (
   `id` int(11) NOT NULL,
   `idrubro` int(11) NOT NULL,
@@ -128,7 +130,6 @@ INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `
 -- Estructura de tabla para la tabla `rubros`
 --
 
-DROP TABLE IF EXISTS `rubros`;
 CREATE TABLE `rubros` (
   `id` int(11) NOT NULL,
   `idcuenta` int(11) NOT NULL,
@@ -207,7 +208,7 @@ ALTER TABLE `ejecutados`
 -- AUTO_INCREMENT de la tabla `fuentes`
 --
 ALTER TABLE `fuentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `programados`

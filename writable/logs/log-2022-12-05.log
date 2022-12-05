@@ -1,0 +1,230 @@
+CRITICAL - 2022-12-05 08:31:56 --> Class "App\Models\Ejecutado" not found
+in APPPATH\Controllers\Ejecutados.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 08:32:36 --> Class "App\Models\Ejecutado" not found
+in APPPATH\Controllers\Ejecutados.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-05 14:04:32 --> mysqli_sql_exception: Unknown column 'fecha' in 'order clause' in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xampp\htdocs\finanzas\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xampp\htdocs\finanzas\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\finanzas\system\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\xampp\htdocs\finanzas\app\Controllers\Ejecutados.php(183): CodeIgniter\BaseModel->findAll()
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+#8 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+#9 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-12-05 14:04:32 --> Call to a member function getResult() on bool
+in SYSTEMPATH\Model.php on line 224.
+ 1 SYSTEMPATH\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Ejecutados.php(183): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-05 14:06:59 --> mysqli_sql_exception: Unknown column 'fecha' in 'order clause' in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xampp\htdocs\finanzas\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xampp\htdocs\finanzas\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\finanzas\system\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\xampp\htdocs\finanzas\app\Controllers\Ejecutados.php(183): CodeIgniter\BaseModel->findAll()
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+#8 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+#9 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-12-05 14:06:59 --> Call to a member function getResult() on bool
+in SYSTEMPATH\Model.php on line 224.
+ 1 SYSTEMPATH\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Ejecutados.php(183): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-05 14:08:56 --> mysqli_sql_exception: Unknown column 'fecha' in 'order clause' in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xampp\htdocs\finanzas\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xampp\htdocs\finanzas\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\finanzas\system\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\xampp\htdocs\finanzas\app\Controllers\Ejecutados.php(183): CodeIgniter\BaseModel->findAll()
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+#8 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+#9 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-12-05 14:08:56 --> Call to a member function getResult() on bool
+in SYSTEMPATH\Model.php on line 224.
+ 1 SYSTEMPATH\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Ejecutados.php(183): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:10:08 --> Undefined variable $datosrubro
+in APPPATH\Controllers\Ejecutados.php on line 187.
+ 1 APPPATH\Controllers\Ejecutados.php(187): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datosrubro', 'APPPATH\\Controllers\\Ejecutados.php', 187)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:10:51 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Ejecutados.php on line 190.
+ 1 APPPATH\Controllers\Ejecutados.php(190): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'APPPATH\\Controllers\\Ejecutados.php', 190)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:13:59 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Ejecutados.php on line 190.
+ 1 APPPATH\Controllers\Ejecutados.php(190): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'APPPATH\\Controllers\\Ejecutados.php', 190)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:15:54 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Ejecutados.php on line 189.
+ 1 APPPATH\Controllers\Ejecutados.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'APPPATH\\Controllers\\Ejecutados.php', 189)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:16:55 --> Array to string conversion
+in APPPATH\Controllers\Ejecutados.php on line 187.
+ 1 APPPATH\Controllers\Ejecutados.php(187): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\Ejecutados.php', 187)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:20:42 --> Call to a member function getResult() on array
+in APPPATH\Controllers\Ejecutados.php on line 189.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:22:24 --> Call to a member function getResult() on array
+in APPPATH\Controllers\Ejecutados.php on line 189.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:23:17 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Ejecutados.php on line 191.
+ 1 APPPATH\Controllers\Ejecutados.php(191): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'APPPATH\\Controllers\\Ejecutados.php', 191)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:24:00 --> Attempt to read property "detalle" on array
+in APPPATH\Controllers\Ejecutados.php on line 192.
+ 1 APPPATH\Controllers\Ejecutados.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "detalle" on array', 'APPPATH\\Controllers\\Ejecutados.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:24:16 --> Unclosed '{' does not match ']'
+in APPPATH\Controllers\Ejecutados.php on line 192.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:24:33 --> Attempt to read property "fechalimite" on array
+in APPPATH\Controllers\Ejecutados.php on line 192.
+ 1 APPPATH\Controllers\Ejecutados.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "fechalimite" on array', 'APPPATH\\Controllers\\Ejecutados.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:30:25 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, string given
+in APPPATH\Controllers\Ejecutados.php on line 190.
+ 1 APPPATH\Controllers\Ejecutados.php(190): date_format('2022-11-26', 'j-M-Y')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:31:05 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, string given
+in APPPATH\Controllers\Ejecutados.php on line 191.
+ 1 APPPATH\Controllers\Ejecutados.php(191): date_format('2022-11-26', 'j-M-Y')
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:32:37 --> syntax error, unexpected token "."
+in APPPATH\Controllers\Ejecutados.php on line 191.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:32:47 --> syntax error, unexpected token "."
+in APPPATH\Controllers\Ejecutados.php on line 191.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:35:19 --> Undefined variable $progs
+in APPPATH\Controllers\Ejecutados.php on line 41.
+ 1 APPPATH\Controllers\Ejecutados.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $progs', 'APPPATH\\Controllers\\Ejecutados.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:54:40 --> Class "App\Controllers\Fuente" not found
+in APPPATH\Controllers\Ejecutados.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->crear()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 14:59:53 --> syntax error, unexpected end of file
+in APPPATH\Views\ejecutados\creaejec.php on line 69.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/creaejec', [], true)
+ 3 APPPATH\Controllers\Ejecutados.php(41): view('ejecutados/creaejec', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 15:04:27 --> Call to a member function getResult() on array
+in APPPATH\Views\ejecutados\creaejec.php on line 26.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/creaejec', [], true)
+ 4 APPPATH\Controllers\Ejecutados.php(43): view('ejecutados/creaejec', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->crear()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-05 15:06:40 --> Attempt to read property "id" on array
+in APPPATH\Views\ejecutados\creaejec.php on line 27.
+ 1 APPPATH\Views\ejecutados\creaejec.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'APPPATH\\Views\\ejecutados\\creaejec.php', 27)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\ejecutados\\creaejec.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/creaejec', [], true)
+ 5 APPPATH\Controllers\Ejecutados.php(43): view('ejecutados/creaejec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

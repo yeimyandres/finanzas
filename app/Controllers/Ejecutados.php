@@ -3,46 +3,52 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Programado;
+use App\Models\Ejecutado;
 use App\Models\Cuenta;
 use App\Models\Rubro;
+use App\Models\Fuente;
 
 
-class Programados extends Controller{
+class ejecutados extends Controller{
 
     public function index(){
 
-        $programado = new programado();
+        $ejecutado = new Ejecutado();
 
-        $insql = "SELECT r.nombre, p.id, p.fechalimite, p.detalle, p.valor, p.estado, c.tipomovimiento, c.nombre as nomcuenta ";
-        $insql .= "FROM programados as p, rubros as r, cuentas as c ";
-        $insql .= "WHERE p.idrubro = r.id and r.idcuenta = c.id ";
-        $insql .= "ORDER BY c.tipomovimiento DESC, c.nombre ASC";
+        $insql = "SELECT p.valor AS valorp, p.detalle AS detallep, p.fechalimite, f.nombre AS nombref, f.tipofuente, r.nombre AS nombrer, c.nombre AS nombrec, e.fecha, e.detalle, e.valor AS valore, e.detalle AS valord ";
+        $insql .= "FROM programados AS p, fuentes AS f, rubros AS r, cuentas AS c, ejecutados AS e ";
+        $insql .= "WHERE p.idrubro = r.id AND f.id = e.idfuente AND r.idcuenta = c.id AND e.idprogramado = p.id ";
+        $insql .= "ORDER BY tipofuente DESC, nombrec ASC, fechalimite ASC";
 
-        $datos['programados'] = $programado->query($insql);
-
-        //$datos['programados'] = $programado->orderBy('tipomovimiento DESC, nombre ASC')->findAll();
+        $datos['ejecutados'] = $ejecutado->query($insql);
 
         $datos['cabecera']=view('plantilla/cabecera');
         $datos['pie']=view('plantilla/pie');
         
-        return view('programados/listaprog',$datos);
+        return view('ejecutados/listaejec',$datos);
 
     }
 
     public function crear(){
 
+        $fuente = new Fuente();
+
+        $datos['fuentes'] = $fuente->orderBy('tipofuente, nombre ASC')->findAll();
+
         $datos['cabecera']=view('plantilla/cabecera');
         $datos['pie']=view('plantilla/pie');
 
-        return view('programados/creaprog',$datos);
+        return view('ejecutados/creaejec',$datos);
     }
 
     public function guardar(){
 
-        $programado = new programado();
+        $idprog = $this->request->getPost('progs');
+
+        $ejecutado = new Ejecutado();
 
         $validacion = $this->validate([
-            'fechalimite' => 'required|min_length[10]',
+            'fecha' => 'required|min_length[10]',
             'detalle' => 'required|min_length[3]',
             'valor' => 'required|min_length[4]'
         ]);
@@ -64,42 +70,42 @@ class Programados extends Controller{
                 'valor'=>$this->request->getVar('valor')
             ];
      
-            $programado->insert($datos);
+            $ejecutado->insert($datos);
      
         }
 
-        return $this->response->redirect(site_url('/listaprogramados'));
+        return $this->response->redirect(site_url('/listaejecutados'));
 
     }
 
 
     public function borrar($id=null){
 
-        $programado = new programado();
+        $ejecutado = new ejecutado();
 
-        $datosprogramado = $programado->where('id',$id)->first();        
+        $datosejecutado = $ejecutado->where('id',$id)->first();        
 
-        $programado->where('id',$id)->delete($id);
+        $ejecutado->where('id',$id)->delete($id);
 
-        return $this->response->redirect(site_url('/listaprogramados'));
+        return $this->response->redirect(site_url('/listaejecutados'));
 
     }
 
     public function editar($id=null){
 
-        $programado = new programado();
-        $datos['programado'] = $programado->where('id',$id)->first();
+        $ejecutado = new ejecutado();
+        $datos['ejecutado'] = $ejecutado->where('id',$id)->first();
 
         $datos['cabecera']=view('plantilla/cabecera');
         $datos['pie']=view('plantilla/pie');
 
-        return view('programados/editaprog', $datos);
+        return view('ejecutados/editaprog', $datos);
 
     }
 
     public function actualizar(){
 
-        $programado = new programado();
+        $ejecutado = new ejecutado();
 
         $datos=[
             'nombre'=>$this->request->getVar('nombre'),
@@ -120,9 +126,9 @@ class Programados extends Controller{
 
         }
 
-        $programado->update($id,$datos);
+        $ejecutado->update($id,$datos);
 
-        return $this->response->redirect(site_url('/listaprogramados'));
+        return $this->response->redirect(site_url('/listaejecutados'));
 
     }
 
@@ -170,6 +176,28 @@ class Programados extends Controller{
         endforeach;
 
         $respuesta .= "</select>";
+
+        return $respuesta;
+
+    }
+
+    public function importarprogs(){
+        
+        $programa = new Programado();
+
+        $idrubro = $this->request->getPost('idrubro');
+
+        $datosprog = $programa->where('idrubro',$idrubro)->orderBy('fechalimite','ASC')->findAll();
+
+        $respuesta = "";
+
+        foreach($datosprog as $registro):
+
+            $fecha = date_create($registro['fechalimite']);
+            $respuesta .= "<input class='form-check-input' type='radio' name='progs' value='".$registro['id']."'>";
+            $respuesta .= "<label class='form-check-label' for='progs'> Pago pendiente: (".date_format($fecha,"j-M-Y").") ".$registro['detalle']."</label></br>";
+        
+        endforeach;
 
         return $respuesta;
 
