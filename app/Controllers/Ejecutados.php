@@ -44,6 +44,7 @@ class ejecutados extends Controller{
     public function guardar(){
 
         $ejecutado = new Ejecutado();
+        $programado = new Programado();
 
         $validacion = $this->validate([
             'detalle' => 'required|min_length[3]',
@@ -69,6 +70,30 @@ class ejecutados extends Controller{
             $ejecutado->insert($datos);
      
         }
+
+        $idprog = $this->request->getVar('progs');
+        $valore = $this->request->getVar('valor');
+        $datosprogramado = $programado->where('id',$idprog)->first();
+        
+        $datosejecutado = $ejecutado->where('idprogramado',$idprog)->findAll();
+        
+        foreach($datosejecutado as $datosejec):
+            $valore += $datosejec['valor'];
+        endforeach;
+
+        $valorp = $datosprogramado['valor'];
+
+        if ($valore < $valorp){
+            $datosp=[
+                'estado'=>'E'
+            ];                
+        }else{
+            $datosp=[
+                'estado'=>'T'
+            ];    
+        }
+
+        $programado->update($idprog,$datosp);
 
         return $this->response->redirect(site_url('/listaejecutados'));
 
@@ -180,20 +205,29 @@ class ejecutados extends Controller{
     public function importarprogs(){
         
         $programa = new Programado();
+        $ejecutado = new Ejecutado();
 
         $idrubro = $this->request->getPost('idrubro');
 
-        $datosprog = $programa->where('idrubro',$idrubro)->orderBy('fechalimite','ASC')->findAll();
+        $datosprog = $programa->where("idrubro = $idrubro AND (estado='P' OR estado = 'E')")->orderBy('fechalimite','ASC')->findAll();
 
-        $respuesta = "";
+            $respuesta = "";
 
-        foreach($datosprog as $registro):
+            foreach($datosprog as $registro):
 
-            $fecha = date_create($registro['fechalimite']);
-            $respuesta .= "<input class='form-check-input' type='radio' name='progs' value='".$registro['id']."'>";
-            $respuesta .= "<label class='form-check-label' for='progs'> Pago pendiente: (".date_format($fecha,"j-M-Y").") ".$registro['detalle']."(".number_format($registro['valor'],2).")</label></br>";
-        
-        endforeach;
+                $ejecutado = $ejecutado->where('idprogramado',$registro['id'])->findAll();
+                $valore = 0;
+                foreach($ejecutado as $datosejec):
+                    $valore += $datosejec['valor'];
+                endforeach;
+                $fecha = date_create($registro['fechalimite']);
+                $respuesta .= "<div class='form-check'>";
+                $respuesta .= "<label class='form-check-label' for='progs'>";
+                $respuesta .= "<input class='form-check-input' type='radio' name='progs' value='".$registro['id']."'> Pago pendiente: (";
+                $respuesta .= date_format($fecha,"j-M-Y").") ".$registro['detalle']." (".number_format($valore,2).")";
+                $respuesta .= "</label></div>";
+            
+            endforeach;    
 
         return $respuesta;
 

@@ -83,3 +83,4 @@ $routes->post('guardaejecutado', 'ejecutados::guardar');
 $routes->get('borraejecutado/(:num)', 'ejecutados::borrar/$1');
 $routes->get('editaejecutado/(:num)', 'ejecutados::editar/$1');
 $routes->post('actualizaejecutado', 'ejecutados::actualizar');
+$routes->get('balance', 'balance::index');

@@ -16,7 +16,7 @@ class Programados extends Controller{
         $insql = "SELECT r.nombre, p.id, p.fechalimite, p.detalle, p.valor, p.estado, c.tipomovimiento, c.nombre as nomcuenta ";
         $insql .= "FROM programados as p, rubros as r, cuentas as c ";
         $insql .= "WHERE p.idrubro = r.id and r.idcuenta = c.id ";
-        $insql .= "ORDER BY c.tipomovimiento DESC, c.nombre ASC";
+        $insql .= "ORDER BY c.tipomovimiento DESC, p.fechalimite, c.nombre ASC";
 
         $datos['programados'] = $programado->query($insql);
 

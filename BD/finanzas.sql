@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-12-2022 a las 23:04:45
+-- Tiempo de generación: 06-12-2022 a las 22:04:04
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -78,9 +78,9 @@ CREATE TABLE `ejecutados` (
 --
 
 INSERT INTO `ejecutados` (`id`, `idprogramado`, `idfuente`, `fecha`, `detalle`, `valor`) VALUES
-(1, 2, 1, '2022-12-05', 'Salario mensual', 6145000),
 (2, 7, 1, '2022-12-05', 'Factura mensual', 14802),
-(3, 8, 1, '2022-12-05', 'Factura mensual', 20829);
+(3, 8, 1, '2022-12-05', 'Factura mensual', 20829),
+(6, 13, 1, '2022-12-06', 'carnes megamax', 104700);
 
 -- --------------------------------------------------------
 
@@ -122,16 +122,11 @@ CREATE TABLE `programados` (
 --
 
 INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `estado`) VALUES
-(2, 2, '2022-11-25', 'Salario mensual', 6145000, 'P'),
-(3, 3, '2022-11-25', 'Saldo en banco noviembre 2022', 67000, 'P'),
+(2, 2, '2022-11-25', 'Salario mensual', 6145000, 'T'),
+(3, 3, '2022-11-25', 'Saldo en banco noviembre 2022', 67000, 'T'),
 (4, 5, '2022-12-01', 'Devolución suscripción Netflix y Amazon Prime Video', 38125, 'P'),
 (5, 6, '2022-12-24', 'Prima de navidad 2022', 7900000, 'P'),
-(7, 7, '2022-11-26', 'Factura Segundo Piso', 14802, 'P'),
-(8, 7, '2022-11-26', 'Factura Primer Piso', 20829, 'P'),
-(9, 8, '2022-11-27', 'Aporte a mamá Stella', 100000, 'P'),
-(10, 9, '2022-11-30', 'Aporte mensual', 800000, 'P'),
-(11, 10, '2022-12-01', 'Pago mensual Netflix y Prime Video', 56800, 'P'),
-(12, 11, '2022-12-01', 'Pago mensual', 298000, 'P');
+(14, 1, '2022-12-26', 'Compras de mercado para casa', 1300000, 'P');
 
 -- --------------------------------------------------------
 
@@ -160,8 +155,49 @@ INSERT INTO `rubros` (`id`, `idcuenta`, `nombre`, `descripcion`) VALUES
 (7, 12, 'Gases de Occidente', 'Pagos mensuales facturas del servicio de gas'),
 (8, 5, 'Aportes a Familia', 'Aportes económicos realizados a miembros de la familia'),
 (9, 7, 'Ahorro Andrés Daniel', 'Aportes a Fondo gastos educativos Andrés Daniel'),
-(10, 13, 'TV Streaming', 'Pago mensual servicio de TV por Streaming'),
-(11, 11, 'PROEXA', 'Pago mensual aporte salud y pensiones');
+(10, 13, 'TV Streaming', 'Pago servicio de TV por Streaming'),
+(11, 11, 'PROEXA', 'Pago mensual aporte salud y pensiones'),
+(12, 4, 'Comidas por fuera', 'Compra de comida en restaurantes'),
+(13, 4, 'Mecato', 'Compra de mecato'),
+(14, 5, 'Celebraciones familiares', 'Celebraciones y reuniones familiares'),
+(16, 6, 'Fondo Nacional del Ahorro', 'Créditos adquiridos con el Fondo Nacional del Ahorro'),
+(17, 6, 'Tarjeta CMR Falabella', 'Compras realizadas con tarjeta CMR de Falabella'),
+(18, 6, 'Tarjeta Tuya', 'Compras realizadas con tarjeta Tuya Éxito'),
+(19, 6, 'Créditos personales', 'Créditos adquiridos con terceros diferentes a entidades bancarias'),
+(20, 5, 'Regalos familiares', 'Regalos u obsequios a miembros de la familia'),
+(21, 7, 'Otros no presupuestados', 'Gastos de educación no contemplados en el presupuesto'),
+(22, 15, 'Peluquería', 'Gastos por concepto de Cortes de cabello y relacionados'),
+(23, 15, 'Vestuario', 'Gastos por concepto de adquisición de ropa y accesorios'),
+(24, 8, 'Renta', 'Pagos por concepto de impuesto a la renta'),
+(25, 8, 'Vehículo', 'Pagos por concepto de impuesto vehicular'),
+(26, 8, 'Vivienda', 'Pagos por concepto de impuesto inmobiliario'),
+(27, 9, 'Alimento blando', 'Compra de alimento blando para las mascotas'),
+(28, 9, 'Alimento duro', 'Compra de alimento sólido para las mascotas'),
+(29, 9, 'Arena para gatos', 'Compra de arena para gatos'),
+(30, 9, 'Imprevistos', 'Gastos relacionados con mascotas no contemplados en presupuesto'),
+(31, 10, 'Paseos familiares', 'Paseos y actividades en familia fuera de la casa'),
+(32, 10, 'Paseos no familiares', 'Paseos y actividades con amigos o compañeros'),
+(33, 11, 'Emermédica', 'Pago mensual servicio de emergencias médicas'),
+(34, 11, 'EPS Sura', 'Pago mensual servicio de salud EPS'),
+(36, 11, 'PAC', 'Pago mensual Plan de Atención Complementaria'),
+(37, 11, 'Otros no presupuestados', 'Gastos de salud no contemplados en presupuesto'),
+(38, 12, 'Emcali', 'Pago mensual servicio de energía, acueducto y alcantarillado'),
+(39, 13, 'WOM', 'Pago mensual servicio de telefonía móvil - WOM'),
+(40, 13, 'TIGO', 'Pago mensual servicio de telefonía, internet o televisión - TIGO'),
+(41, 14, 'Combustible', 'Gastos por concepto de combustible vehículo'),
+(42, 14, 'Taller', 'Gastos por concepto de mantenimiento, reparación o repuestos vehículo'),
+(43, 14, 'Parqueadero', 'Pago por concepto de servicio de parqueadero'),
+(44, 14, 'Transporte público', 'Gastos por concepto de uso de transporte público'),
+(45, 16, 'Inversiones bancarias', 'Inversiones realizadas a través de entidades bancarias'),
+(46, 16, 'Inversiones no bancarias', 'Inversiones realizadas a través de terceros - Entidades no bancarias o particulares'),
+(47, 17, 'Reservas', 'Valores reservados para pagos en periodos posteriores al actual'),
+(48, 18, 'Muebles', 'Compra de muebles para el hogar'),
+(49, 18, 'Electrodomésticos', 'Compra de electrodomésticos para el hogar'),
+(50, 18, 'Mantenimiento', 'Gastos en reparaciones, mantenimiento o repuestos en el hogar'),
+(51, 18, 'Otros no presupuestados', 'Gastos de hogar no contemplados en presupuesto'),
+(52, 19, 'Bancaseguros', 'Debito automático mensual - seguro de vida cuenta de ahorros'),
+(53, 19, 'Cuota de manejo', 'Débito automático mensual - manejo cuenta de ahorros'),
+(54, 13, 'Microsoft Office 365 - Familia', 'Pago anual suscripción paquete ofimático');
 
 --
 -- Índices para tablas volcadas
@@ -211,7 +247,7 @@ ALTER TABLE `cuentas`
 -- AUTO_INCREMENT de la tabla `ejecutados`
 --
 ALTER TABLE `ejecutados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `fuentes`
@@ -223,13 +259,13 @@ ALTER TABLE `fuentes`
 -- AUTO_INCREMENT de la tabla `programados`
 --
 ALTER TABLE `programados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `rubros`
 --
 ALTER TABLE `rubros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

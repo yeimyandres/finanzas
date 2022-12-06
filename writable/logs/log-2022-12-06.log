@@ -1,0 +1,268 @@
+ERROR - 2022-12-06 09:59:59 --> mysqli_sql_exception: Unknown column 'estado' in 'where clause' in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xampp\htdocs\finanzas\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xampp\htdocs\finanzas\system\Model.php(223): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\finanzas\system\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\xampp\htdocs\finanzas\app\Controllers\Ejecutados.php(36): CodeIgniter\BaseModel->findAll()
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\ejecutados->crear()
+#8 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+#9 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-12-06 09:59:59 --> Call to a member function getResult() on bool
+in SYSTEMPATH\Model.php on line 224.
+ 1 SYSTEMPATH\BaseModel.php(585): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Ejecutados.php(36): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->crear()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:09:22 --> Call to undefined method App\Models\Programado::getNumRows
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Ejecutados.php(188): CodeIgniter\Model->__call('getNumRows', [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:10:16 --> syntax error, unexpected variable "$programa"
+in APPPATH\Controllers\Ejecutados.php on line 188.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:10:33 --> syntax error, unexpected variable "$datosprog"
+in APPPATH\Controllers\Ejecutados.php on line 188.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:10:51 --> syntax error, unexpected variable "$datosprog"
+in APPPATH\Controllers\Ejecutados.php on line 188.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:11:10 --> syntax error, unexpected variable "$getNumRows"
+in APPPATH\Controllers\Ejecutados.php on line 188.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:11:24 --> syntax error, unexpected variable "$programa"
+in APPPATH\Controllers\Ejecutados.php on line 188.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:12:09 --> Call to undefined method App\Models\Programado::getNumRows
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Ejecutados.php(189): CodeIgniter\Model->__call('getNumRows', [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:12:28 --> Call to undefined method App\Models\Programado::getNumRows
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Ejecutados.php(189): CodeIgniter\Model->__call('getNumRows', [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:13:00 --> Call to undefined method App\Models\Programado::getNumRows
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Ejecutados.php(189): CodeIgniter\Model->__call('getNumRows', [])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:14:12 --> Call to a member function getNumRows() on array
+in APPPATH\Controllers\Ejecutados.php on line 189.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:14:44 --> Call to a member function getNumRows() on array
+in APPPATH\Controllers\Ejecutados.php on line 189.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 10:18:50 --> Call to a member function countResultAll() on array
+in APPPATH\Controllers\Ejecutados.php on line 188.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->importarprogs()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 12:38:41 --> syntax error, unexpected token "(", expecting ";"
+in APPPATH\Controllers\Ejecutados.php on line 82.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 12:40:35 --> Undefined variable $ejecutados
+in APPPATH\Controllers\Ejecutados.php on line 80.
+ 1 APPPATH\Controllers\Ejecutados.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ejecutados', 'APPPATH\\Controllers\\Ejecutados.php', 80)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-06 13:27:00 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY c.tipomovimiento, f.tipofuente, r.id' at line 1 in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT c.tipomo...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT c.tipomo...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT c.tipomo...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('SELECT c.tipomo...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Balance.php(31): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Balance->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-06 13:27:00 --> Undefined variable $ejecutado
+in APPPATH\Views\balance.php on line 15.
+ 1 APPPATH\Views\balance.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ejecutado', 'APPPATH\\Views\\balance.php', 15)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\balance.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('balance', [], true)
+ 5 APPPATH\Controllers\Balance.php(36): view('balance', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-06 13:27:24 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY c.tipomovimiento, f.tipofuente, r.id' at line 1 in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT c.tipomo...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT c.tipomo...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT c.tipomo...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('SELECT c.tipomo...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Balance.php(31): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Balance->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-06 13:27:24 --> Cannot use object of type mysqli as array
+in APPPATH\Views\balance.php on line 18.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('balance', [], true)
+ 4 APPPATH\Controllers\Balance.php(36): view('balance', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->index()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-06 13:27:57 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY c.tipomovimiento, f.tipofuente, r.id' at line 1 in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT c.tipomo...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT c.tipomo...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT c.tipomo...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('SELECT c.tipomo...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Balance.php(31): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Balance->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-06 13:27:57 --> Undefined property: mysqli::$tipomovimiento
+in APPPATH\Views\balance.php on line 18.
+ 1 APPPATH\Views\balance.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: mysqli::$tipomovimiento', 'APPPATH\\Views\\balance.php', 18)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\balance.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('balance', [], true)
+ 5 APPPATH\Controllers\Balance.php(36): view('balance', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-06 13:28:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY c.tipomovimiento, f.tipofuente, r.id' at line 1 in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT c.tipomo...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT c.tipomo...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT c.tipomo...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('SELECT c.tipomo...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Balance.php(31): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Balance->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-06 13:28:20 --> Undefined property: mysqli::$tipomovimiento
+in APPPATH\Views\balance.php on line 18.
+ 1 APPPATH\Views\balance.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: mysqli::$tipomovimiento', 'APPPATH\\Views\\balance.php', 18)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\balance.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('balance', [], true)
+ 5 APPPATH\Controllers\Balance.php(36): view('balance', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-06 13:28:41 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY c.tipomovimiento, f.tipofuente, r.id' at line 1 in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT c.tipomo...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT c.tipomo...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT c.tipomo...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('SELECT c.tipomo...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Balance.php(31): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\Balance->index()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-06 13:28:41 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY c.tipomovimiento, f.tipofuente, r.id' at line 1
+in SYSTEMPATH\Database\MySQLi\Result.php on line 148.
+ 1 SYSTEMPATH\Database\MySQLi\Result.php(148): mysqli_result->fetch_object('stdClass')
+ 2 SYSTEMPATH\Database\BaseResult.php(227): CodeIgniter\Database\MySQLi\Result->fetchObject()
+ 3 SYSTEMPATH\Database\BaseResult.php(103): CodeIgniter\Database\BaseResult->getResultObject()
+ 4 APPPATH\Views\balance.php(15): CodeIgniter\Database\BaseResult->getResult()
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\balance.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('balance', [], true)
+ 8 APPPATH\Controllers\Balance.php(36): view('balance', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->index()
+10 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+11 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 13:50:39 --> Undefined variable $tarjeta
+in APPPATH\Views\balance.php on line 32.
+ 1 APPPATH\Views\balance.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tarjeta', 'APPPATH\\Views\\balance.php', 32)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\balance.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('balance', [], true)
+ 5 APPPATH\Controllers\Balance.php(36): view('balance', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-06 13:53:33 --> Undefined variable $tarjeta
+in APPPATH\Views\balance.php on line 56.
+ 1 APPPATH\Views\balance.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tarjeta', 'APPPATH\\Views\\balance.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\balance.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('balance', [], true)
+ 5 APPPATH\Controllers\Balance.php(36): view('balance', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
