@@ -206,6 +206,7 @@ class ejecutados extends Controller{
         
         $programa = new Programado();
         $ejecutado = new Ejecutado();
+        $cadena = "";
 
         $idrubro = $this->request->getPost('idrubro');
 
@@ -215,10 +216,11 @@ class ejecutados extends Controller{
 
             foreach($datosprog as $registro):
 
-                $ejecutado = $ejecutado->where('idprogramado',$registro['id'])->findAll();
+                $ejecutados = $ejecutado->where('idprogramado',$registro['id'])->findAll();
                 $valore = 0;
-                foreach($ejecutado as $datosejec):
+                foreach($ejecutados as $datosejec):
                     $valore += $datosejec['valor'];
+                    $cadena .= ":".$valore." - ".$datosejec['valor'];
                 endforeach;
                 $fecha = date_create($registro['fechalimite']);
                 $respuesta .= "<div class='form-check'>";
@@ -229,7 +231,8 @@ class ejecutados extends Controller{
             
             endforeach;    
 
-        return $respuesta;
+        //return $respuesta;
+        print_r($cadena);
 
     }
 

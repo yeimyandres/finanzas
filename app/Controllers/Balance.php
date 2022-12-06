@@ -19,7 +19,7 @@ class Balance extends Controller{
         $insql = "SELECT p.fechalimite, c.tipomovimiento, c.nombre AS nombrec, r.nombre AS nombrer, SUM(p.valor) AS valorp, SUM(e.valor) AS valore";
         $insql .= " FROM programados AS p ";
         $insql .= " JOIN rubros AS r ON p.idrubro = r.id JOIN cuentas AS c ON r.idcuenta = c.id LEFT JOIN ejecutados AS e ON e.idprogramado = p.id ";
-        $insql .= " WHERE c.tipomovimiento = 'E'";
+        //$insql .= " WHERE c.tipomovimiento = 'E'";
         $insql .= " GROUP BY c.nombre, r.nombre ORDER BY c.tipomovimiento DESC, c.nombre, r.nombre;";
 
         $datos['ejecutados'] = $ejecutado->query($insql);

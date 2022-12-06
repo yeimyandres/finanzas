@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-12-2022 a las 22:04:04
+-- Tiempo de generación: 06-12-2022 a las 23:03:21
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -78,9 +78,7 @@ CREATE TABLE `ejecutados` (
 --
 
 INSERT INTO `ejecutados` (`id`, `idprogramado`, `idfuente`, `fecha`, `detalle`, `valor`) VALUES
-(2, 7, 1, '2022-12-05', 'Factura mensual', 14802),
-(3, 8, 1, '2022-12-05', 'Factura mensual', 20829),
-(6, 13, 1, '2022-12-06', 'carnes megamax', 104700);
+(8, 2, 1, '2022-12-06', 'Salario mensual', 6145000);
 
 -- --------------------------------------------------------
 
@@ -123,10 +121,14 @@ CREATE TABLE `programados` (
 
 INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `estado`) VALUES
 (2, 2, '2022-11-25', 'Salario mensual', 6145000, 'T'),
-(3, 3, '2022-11-25', 'Saldo en banco noviembre 2022', 67000, 'T'),
+(3, 3, '2022-11-25', 'Saldo en banco noviembre 2022', 67000, 'P'),
 (4, 5, '2022-12-01', 'Devolución suscripción Netflix y Amazon Prime Video', 38125, 'P'),
 (5, 6, '2022-12-24', 'Prima de navidad 2022', 7900000, 'P'),
-(14, 1, '2022-12-26', 'Compras de mercado para casa', 1300000, 'P');
+(14, 1, '2022-12-26', 'Compras de mercado para casa', 1300000, 'P'),
+(15, 7, '2022-11-26', 'Factura Primer Piso', 20829, 'P'),
+(16, 7, '2022-11-26', 'Factura Segundo Piso', 14802, 'P'),
+(17, 8, '2022-11-27', 'Aporte a mamá Stella', 100000, 'P'),
+(18, 9, '2022-11-30', 'Aporte ahorro CCAH', 800000, 'P');
 
 -- --------------------------------------------------------
 
@@ -247,7 +249,7 @@ ALTER TABLE `cuentas`
 -- AUTO_INCREMENT de la tabla `ejecutados`
 --
 ALTER TABLE `ejecutados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `fuentes`
@@ -259,7 +261,7 @@ ALTER TABLE `fuentes`
 -- AUTO_INCREMENT de la tabla `programados`
 --
 ALTER TABLE `programados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `rubros`

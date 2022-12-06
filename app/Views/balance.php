@@ -72,9 +72,23 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach($ejecutados->getResult() as $ejecutado):?>
+        <?php foreach($ejecutados->getResult() as $ejecutado):
             
-            <tr align='center'>
+            if(is_null($ejecutado->valore)){
+                $valorejecutado = 0;
+            }else{
+                $valorejecutado = $ejecutado->valore;
+            }
+            $saldo = $ejecutado->valorp - $ejecutado->valore;
+            if ($saldo > 0){
+                $disponible = "$ ".number_format($saldo,2);
+                $clasefila = "";
+            }else{
+                $disponible = "Pagado";
+                $clasefila = "class='font-italic text-muted'";
+            }
+            ?>
+            <tr align='center' <?=$clasefila?>>
                 <?php
                     if ($ejecutado->tipomovimiento == 'I'){
                         $movimiento = "Ingreso";
@@ -88,25 +102,7 @@
                 <td><?=$ejecutado->nombrer;?></td>
                 <td><?=date_format($fecha,"j-M-Y")?></td>
                 <td align = 'right'><?="$ ".number_format($ejecutado->valorp,2);?></td>
-                <td align = 'right'>
-                    <?php
-                        if(is_null($ejecutado->valore)){
-                            $valorejecutado = 0;
-                        }else{
-                            $valorejecutado = $ejecutado->valore;
-                        }
-                        
-                        echo "$ ".number_format($valorejecutado,2)
-                    ?>
-                </td>
-                <?php
-                    $saldo = $ejecutado->valorp - $ejecutado->valore;
-                    if ($saldo > 0){
-                        $disponible = "$ ".number_format($saldo,2);
-                    }else{
-                        $disponible = "Pagado";
-                    }
-                ?>
+                <td align = 'right'><?="$ ".number_format($valorejecutado,2)?></td>
                 <td align='right'><?=$disponible?></td>
             </tr>
 
