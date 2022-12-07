@@ -206,33 +206,32 @@ class ejecutados extends Controller{
         
         $programa = new Programado();
         $ejecutado = new Ejecutado();
-        $cadena = "";
 
         $idrubro = $this->request->getPost('idrubro');
 
-        $datosprog = $programa->where("idrubro = $idrubro AND (estado='P' OR estado = 'E')")->orderBy('fechalimite','ASC')->findAll();
+        $datosprog = $programa->query("SELECT * FROM programados WHERE idrubro = ".$idrubro." AND (estado = 'P' OR estado = 'E') ORDER BY fechalimite ASC;");
 
             $respuesta = "";
 
-            foreach($datosprog as $registro):
+            foreach($datosprog->getResult() as $registro):
 
-                $ejecutados = $ejecutado->where('idprogramado',$registro['id'])->findAll();
+                $ejec = $ejecutado->where('idprogramado',$registro->id)->findAll();
                 $valore = 0;
-                foreach($ejecutados as $datosejec):
+                foreach($ejec as $datosejec):
                     $valore += $datosejec['valor'];
-                    $cadena .= ":".$valore." - ".$datosejec['valor'];
                 endforeach;
-                $fecha = date_create($registro['fechalimite']);
+                $saldo = $registro->valor - $valore;
+                $fecha = date_create($registro->fechalimite);
                 $respuesta .= "<div class='form-check'>";
                 $respuesta .= "<label class='form-check-label' for='progs'>";
-                $respuesta .= "<input class='form-check-input' type='radio' name='progs' value='".$registro['id']."'> Pago pendiente: (";
-                $respuesta .= date_format($fecha,"j-M-Y").") ".$registro['detalle']." (".number_format($valore,2).")";
+                $respuesta .= "<input class='form-check-input' type='radio' name='progs' value='".$registro->id."'> Pago pendiente: (";
+                $respuesta .= date_format($fecha,"j-M-Y").") ".$registro->detalle." (".number_format($saldo,2).")";
                 $respuesta .= "</label></div>";
             
             endforeach;    
 
-        //return $respuesta;
-        print_r($cadena);
+        return $respuesta;
+    
 
     }
 
