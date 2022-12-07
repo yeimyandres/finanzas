@@ -1,6 +1,4 @@
 <?=$cabecera?>
-Formulario de crear
-
 <div class="card">
     <div class="card-body">
         <h5 class="card-title">Ingresar datos de rubro</h5>

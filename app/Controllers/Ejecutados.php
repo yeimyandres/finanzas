@@ -232,7 +232,6 @@ class ejecutados extends Controller{
 
         return $respuesta;
     
-
     }
 
 }

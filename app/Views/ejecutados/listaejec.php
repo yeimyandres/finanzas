@@ -1,6 +1,6 @@
 <?=$cabecera?>
 <br/>
-<a class="btn btn-success" href="<?=base_url('creaejecutado')?>">Ejecutar un pago</a>
+<a class="btn btn-success" href="<?=base_url('creaejecutado')?>">Registrar ejecución de presupuesto</a>
 <br/>
 <br/>
 <table class="table table-sm table-light">

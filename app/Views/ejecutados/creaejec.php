@@ -2,7 +2,7 @@
 
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Ingresar datos de pago a programar</h5>
+        <h5 class="card-title">Ingresar nueva ejecución</h5>
         <p class="card-text">
 
             <form method="post" action="<?=base_url('/guardaejecutado')?>" enctype="multipart/form-data">

@@ -1,6 +1,6 @@
 <?=$cabecera?>
 <br/>
-<a class="btn btn-success" href="<?=base_url('creaprogramado')?>">Programar nuevo pago</a>
+<a class="btn btn-success" href="<?=base_url('creaprogramado')?>">Programar Nuevo Ingreso/Egreso</a>
 <br/>
 <br/>
 <table class="table table-sm table-light">

@@ -1,9 +1,7 @@
 <?=$cabecera?>
-Formulario de editar
-
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Ingresar datos de rubro</h5>
+        <h5 class="card-title">Editar datos de rubro</h5>
         <p class="card-text">
 
             <form method="post" action="<?=site_url('/actualizarubro')?>" enctype="multipart/form-data">

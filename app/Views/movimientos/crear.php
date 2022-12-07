@@ -1,7 +1,7 @@
 <?=$cabecera?>
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Ingresar datos de cuenta</h5>
+        <h5 class="card-title">Ingresar datos de movimiento</h5>
         <p class="card-text">
 
             <form method="post" action="<?=site_url('/guardacuenta')?>" enctype="multipart/form-data">

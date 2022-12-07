@@ -1,6 +1,6 @@
 <?=$cabecera?>
 <br/>
-<a class="btn btn-success" href="<?=base_url('creacuenta')?>">Crear nueva cuenta</a>
+<a class="btn btn-success" href="<?=base_url('crear')?>">Registrar Nuevo Movimiento</a>
 <br/>
 <br/>
 <table class="table table-light">

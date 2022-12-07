@@ -1,6 +1,6 @@
 <?=$cabecera?>
 <br/>
-<a class="btn btn-success" href="<?=base_url('crearubro')?>">Crear un rubro</a>
+<a class="btn btn-success" href="<?=base_url('crearubro')?>">Crear nuevo rubro</a>
 <br/>
 <br/>
 
