@@ -1,3 +1,15 @@
+function cargarlistadoprog(urlbase,idcuenta,idrubro){
+    $.ajax({
+        type: "POST",
+        url: urlbase,
+        dataType: "html",
+        data: "idcuenta="+idcuenta+"&idrubro="+idrubro,
+        success: function(r){
+            //$('#cborubros').html(r);
+            $("#tblProgramados tbody").html(r);
+        }
+    });
+}
 function cargarubros(idcuenta,urlbase){
     
     $.ajax({
@@ -11,6 +23,7 @@ function cargarubros(idcuenta,urlbase){
     });
 
 }
+
 function cargacuentas(tipomovimiento,urlbase,urlbaser){
 
     $.ajax({

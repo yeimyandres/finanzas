@@ -1,9 +1,22 @@
 <?=$cabecera?>
 <br/>
 <a class="btn btn-success" href="<?=base_url('creaprogramado')?>">Programar Nuevo Ingreso/Egreso</a>
+<label for='cbocuentas'>Cuentas: </label>
+<select id="cbocuentas" name="cbocuentas">
+    <option value='0'>Seleccione una cuenta...</option>
+<?php
+foreach($fltcuentas->getResult() as $fltcuenta):
+    echo "<option value='".$fltcuenta->id."'>".$fltcuenta->nombre."</option>";
+endforeach;
+?>
+</select>
+<label for='cborubros'>Rubros: </label>
+<select id="cborubros" name="cborubros">
+</select>
+
 <br/>
 <br/>
-<table class="table table-sm table-light">
+<table class="table table-sm table-light" id='tblProgramados'>
     <thead class="thead-light">
         <tr align='center'>
             <th>Fecha Pago</th>
@@ -59,4 +72,27 @@
 </br>
 <p><b>VALORES GENERALES:</b></p>
 <p><b>Ingresos Totales:</b> <?="$ ".number_format($ingresos, 2);?> -- <b>Egresos Totales:</b> <?="$ ".number_format($egresos, 2);?> -- <b>Disponible:</b> <?="$ ".number_format($ingresos-$egresos, 2);?></p>
-<?=$pie?>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="<?=base_url('inc/js/programados.js')?>"></script>
+<script>
+    $(document).ready(function(){
+        $('#cbocuentas').change(function(){
+            urlbase = "<?php echo base_url('index.php/programados/filtroprogramados'); ?>";
+            urlbaser = "<?php echo base_url('index.php/programados/importarrubros2'); ?>";
+            idcuenta = $(this).val();
+            idrubro = 0;
+            cargarubros(idcuenta,urlbaser);
+            cargarlistadoprog(urlbase,idcuenta,idrubro);
+        });
+        $('#cborubros').change(function(){
+            urlbase = "<?php echo base_url('index.php/programados/filtroprogramados'); ?>";
+            idrubro = $(this).val();
+            idcuenta = $('#cbocuentas').val();
+            cargarlistadoprog(urlbase,idcuenta,idrubro);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,12 +1,53 @@
 <?=$cabecera?>
 <br/>
+<h2>Balance General</h2>
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr align='center'>
+            <th>Tipo movimiento</th>
+            <th>Valores Programados</th>
+            <th>Valores ejecutados</th>
+            <th>Valores pendientes</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            <?php
+                $programadototali = 0;
+                $ejecutadototali = 0;
+                $programadototale = 0;
+                $ejecutadototale = 0;
+                foreach($ejecutados->getResult() as $ejecutado):
+                    if ($ejecutado->tipomovimiento=='I'){
+                        $programadototali += $ejecutado->valorp;
+                        $ejecutadototali += $ejecutado->valore;    
+                    }else{
+                        $programadototale += $ejecutado->valorp;
+                        $ejecutadototale += $ejecutado->valore;    
+                    }
+                endforeach;
+            ?>
+        <tr align='right'>
+            <td align='center'>Ingresos</td>
+            <td><?="$ ".number_format($programadototali)?></td>
+            <td><?="$ ".number_format($ejecutadototali)?></td>
+            <td><?="$ ".number_format($programadototali-$ejecutadototali)?></td>
+        </tr>
+        <tr align='right'>
+            <td align='center'>Egresos</td>
+            <td><?="$ ".number_format($programadototale)?></td>
+            <td><?="$ ".number_format($ejecutadototale)?></td>
+            <td><?="$ ".number_format($programadototale-$ejecutadototale)?></td>
+        </tr>
+    </tbody>
+</table>
 <h2>Saldos disponibles</h2>
 <table class="table table-light">
     <thead class="thead-light">
         <tr align='center'>
             <th>Fuente Dinero</th>
-            <th>Valor ingresos</th>
-            <th>Valor egresos</th>
+            <th>Valor ingresos + consignaciones</th>
+            <th>Valor egresos + retiros</th>
             <th>Disponible</th>
         </tr>
     </thead>
@@ -19,29 +60,58 @@
             $tarjetai = 20000000;
             $tarjetae = 0;
             foreach($fuentes->getResult() as $fuente):
-                if ($fuente->tipofuente=='B'){
-                    if($fuente->tipomovimiento=='I'){
-                        $bancosi = $fuente->valore;
-                    }else{
-                        $bancose = $fuente->valore;
-                    }
-                }elseif ($fuente->tipofuente='E'){
-                    if($fuente->tipomovimiento=='I'){
-                        $efectivoi = $fuente->valore;
-                    }else{
-                        $efectivoe = $fuente->valore;
-                    }
+
+                switch($fuente->tipofuente){
+                    case 'B':
+                        switch($fuente->tipomovimiento){
+                            case 'I':
+                                $bancosi = $fuente->valore;
+                                break;
+                            case 'E':
+                                $bancose = $fuente->valore;
+                                break;
+                        }
+                        break;
+                    case 'E':
+                        switch($fuente->tipomovimiento){
+                            case 'I':
+                                $efectivoi = $fuente->valore;
+                                break;
+                            case 'E':
+                                $efectivoe = $fuente->valore;
+                                break;
+                        }
+                        break;
+                    case 'T':
+                        switch($fuente->tipomovimiento){
+                            case 'I':
+                                $tarjetai = $fuente->valore;
+                                break;
+                            case 'E':
+                                $tarjetae = $fuente->valore;
+                                break;
+                        }
+                        break;
+                }
+
+            endforeach;
+
+            foreach($movimientos->getResult() as $movimiento):
+                if ($movimiento->transaccion=='R'){
+                    $bancose = $bancose + $movimiento->valort;
+                    $efectivoi = $efectivoi + $movimiento->valort;
                 }else{
-                    $tarjetae = $fuente->valore;
+                    $bancosi = $bancosi + $movimiento->valort;
+                    $efectivoe = $efectivoe + $movimiento->valort;
                 }
             endforeach;
-            $bancose = $bancose - $tarjetae;
+
         ?>
         <tr align='right'>
             <td align='center'>Bancos</td>
             <td><?="$ ".number_format($bancosi,2)?></td>
             <td><?="$ ".number_format($bancose,2)?></td>
-            <td><?="$ ".number_format($bancosi-$bancose,2)?></td>
+            <td><?="$ ".number_format($bancosi-$bancose-$tarjetae,2)?></td>
         </tr>
         <tr align='right'>
             <td align='center'>Efectivo</td>

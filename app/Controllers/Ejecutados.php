@@ -7,6 +7,7 @@ use App\Models\Ejecutado;
 use App\Models\Cuenta;
 use App\Models\Rubro;
 use App\Models\Fuente;
+use App\Models\Movimiento;
 
 
 class ejecutados extends Controller{
@@ -18,7 +19,7 @@ class ejecutados extends Controller{
         $insql = "SELECT p.id AS idprog, p.valor AS valorp, p.detalle AS detallep, p.fechalimite, f.nombre AS nombref, f.tipofuente, r.nombre AS nombrer, c.nombre AS nombrec, c.tipomovimiento, e.id, e.fecha, e.detalle, e.valor AS valore, e.detalle AS valord ";
         $insql .= "FROM programados AS p, fuentes AS f, rubros AS r, cuentas AS c, ejecutados AS e ";
         $insql .= "WHERE p.idrubro = r.id AND f.id = e.idfuente AND r.idcuenta = c.id AND e.idprogramado = p.id ";
-        $insql .= "ORDER BY tipofuente DESC, nombrec ASC, fechalimite ASC";
+        $insql .= "ORDER BY c.tipomovimiento DESC, e.fecha ASC, c.nombre ASC, r.nombre ASC";
 
         $datos['ejecutados'] = $ejecutado->query($insql);
 
@@ -72,7 +73,7 @@ class ejecutados extends Controller{
         }
 
         $idprog = $this->request->getVar('progs');
-        $valore = $this->request->getVar('valor');
+        $valore = 0;
         $datosprogramado = $programado->where('id',$idprog)->first();
         
         $datosejecutado = $ejecutado->where('idprogramado',$idprog)->findAll();
@@ -148,6 +149,46 @@ class ejecutados extends Controller{
         }
 
         $ejecutado->update($id,$datos);
+
+        return $this->response->redirect(site_url('/listaejecutados'));
+
+    }
+
+    public function movimientos(){
+
+        $datos['cabecera']=view('plantilla/cabecera');
+        $datos['pie']=view('plantilla/pie');
+
+        return view('movimientos/crear', $datos);
+    }
+
+    public function guardamovimientos(){
+
+        $movimiento = new Movimiento();
+
+        $validacion = $this->validate([
+            'detalle' => 'required|min_length[3]',
+            'valor' => 'required|min_length[1]'
+        ]);
+
+        if(!$validacion){
+
+            $sesion = session();
+            $sesion->setFlashdata('mensaje','Revise la información');
+            return redirect()->back()->withInput();
+
+        }else{
+
+            $datos=[
+                'transaccion'=>$this->request->getVar('transaccion'),
+                'fecha'=>$this->request->getVar('fecha'),
+                'detalle'=>$this->request->getVar('detalle'),
+                'valor'=>$this->request->getVar('valor')
+            ];
+     
+            $movimiento->insert($datos);
+     
+        }
 
         return $this->response->redirect(site_url('/listaejecutados'));
 
