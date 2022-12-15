@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-12-2022 a las 22:29:37
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.1.12
+-- Tiempo de generación: 15-12-2022 a las 17:56:03
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cuentas` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(75) NOT NULL,
-  `tipomovimiento` varchar(1) NOT NULL
+  `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipomovimiento` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `ejecutados` (
   `idprogramado` int(11) NOT NULL,
   `idfuente` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `detalle` varchar(128) NOT NULL,
+  `detalle` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `valor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -113,7 +113,7 @@ INSERT INTO `ejecutados` (`id`, `idprogramado`, `idfuente`, `fecha`, `detalle`, 
 (43, 58, 2, '2022-11-30', 'Aguacate Parasoles Rojos', 3000),
 (44, 14, 2, '2022-11-30', 'Compras varias', 13000),
 (45, 14, 2, '2022-11-30', 'Cubos caldo de costilla', 5000),
-(46, 62, 2, '2022-11-30', 'Pago cita domicilio EMI', 18500),
+(46, 77, 2, '2022-11-30', 'Pago cita domicilio EMI', 18500),
 (47, 57, 1, '2022-11-30', 'Uber EPS a CCAH', 18500),
 (48, 55, 2, '2022-11-30', 'Didi de CCAH a casa', 15500),
 (49, 55, 2, '2022-11-30', 'Aporte actividad navideña CCAH', 10000),
@@ -158,7 +158,32 @@ INSERT INTO `ejecutados` (`id`, `idprogramado`, `idfuente`, `fecha`, `detalle`, 
 (88, 55, 3, '2022-12-07', 'Compra tu360 Bancolombia', 100194),
 (89, 55, 2, '2022-12-07', 'Moneda conmemorativa la china - 10.000', 20000),
 (90, 55, 2, '2022-12-07', 'Buñuelos y velitas', 46000),
-(91, 14, 2, '2022-12-08', 'Compras varias', 26200);
+(91, 14, 2, '2022-12-08', 'Compras varias', 26200),
+(93, 14, 2, '2022-12-09', 'Compras varias', 15000),
+(94, 14, 3, '2022-12-09', 'Carnes megamax', 79000),
+(95, 14, 2, '2022-12-09', 'Fruver megamax', 15000),
+(96, 77, 2, '2022-12-09', 'Medicamentos varios', 31000),
+(97, 57, 2, '2022-12-09', 'Taxi casa - clínica Colombia', 6000),
+(98, 54, 2, '2022-12-11', 'Arepas en El Arepazo', 31000),
+(99, 14, 2, '2022-12-11', 'Compras varias', 20000),
+(100, 77, 3, '2022-12-11', 'Atención domiciliaria EMI - Yeimy', 14000),
+(101, 14, 3, '2022-12-12', 'Compras D1', 116370),
+(102, 30, 1, '2022-12-12', 'Pago mensual Plan Premium Sanitas - Angie', 37400),
+(103, 58, 2, '2022-12-13', 'Arepa Yami', 2500),
+(104, 70, 2, '2022-12-13', 'Aportes recolectados novena grupo 2', 200000),
+(105, 31, 1, '2022-12-13', 'Pago mensual', 123341),
+(106, 5, 1, '2022-12-13', 'Prima navidad 2022', 7954000),
+(107, 34, 1, '2022-12-13', 'Pago mensual', 850000),
+(108, 50, 1, '2022-12-13', 'Abono extraordinario a deuda', 520000),
+(109, 41, 1, '2022-12-13', 'Aporte a Angie', 800000),
+(110, 43, 1, '2022-12-13', 'Aporte a mamá Stella', 600000),
+(111, 44, 1, '2022-12-13', 'Aporte a mamá Tenny', 600000),
+(112, 45, 1, '2022-12-13', 'Aporte extraordinario', 700000),
+(113, 49, 1, '2022-12-13', 'Primer pago deuda', 1000000),
+(114, 49, 1, '2022-12-14', 'Segundo pago deuda', 250000),
+(115, 56, 3, '2022-12-14', 'Gasolina corriente Primax', 90029),
+(116, 57, 2, '2022-12-14', 'Transportes varios', 30000),
+(117, 14, 2, '2022-12-14', 'Compras varias', 66000);
 
 -- --------------------------------------------------------
 
@@ -168,8 +193,8 @@ INSERT INTO `ejecutados` (`id`, `idprogramado`, `idfuente`, `fecha`, `detalle`, 
 
 CREATE TABLE `fuentes` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(75) NOT NULL,
-  `tipofuente` varchar(1) NOT NULL
+  `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipofuente` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -189,9 +214,9 @@ INSERT INTO `fuentes` (`id`, `nombre`, `tipofuente`) VALUES
 
 CREATE TABLE `movimientos` (
   `id` int(11) NOT NULL,
-  `transaccion` varchar(1) NOT NULL,
+  `transaccion` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL,
   `fecha` date NOT NULL,
-  `detalle` varchar(128) NOT NULL,
+  `detalle` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `valor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -201,7 +226,9 @@ CREATE TABLE `movimientos` (
 
 INSERT INTO `movimientos` (`id`, `transaccion`, `fecha`, `detalle`, `valor`) VALUES
 (1, 'R', '2022-11-29', 'Retiro cajero Bancolombia - Astrocentro', 400000),
-(2, 'R', '2022-12-07', 'Retiro cajero Bancolombia - Astrocentro', 500000);
+(2, 'R', '2022-12-07', 'Retiro cajero Bancolombia - Astrocentro', 500000),
+(3, 'R', '2022-12-13', 'Retiro cajero Bancolombia - Astrocentro', 300000),
+(4, 'R', '2022-12-14', 'Retiro cajero Bancolombia - Astrocentro', 1000000);
 
 -- --------------------------------------------------------
 
@@ -213,9 +240,9 @@ CREATE TABLE `programados` (
   `id` int(11) NOT NULL,
   `idrubro` int(11) NOT NULL,
   `fechalimite` date NOT NULL,
-  `detalle` varchar(128) NOT NULL,
+  `detalle` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `valor` int(11) NOT NULL,
-  `estado` varchar(1) NOT NULL DEFAULT 'P'
+  `estado` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'P'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -224,7 +251,7 @@ CREATE TABLE `programados` (
 
 INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `estado`) VALUES
 (2, 2, '2022-11-25', 'Salario mensual', 6145000, 'T'),
-(5, 6, '2022-12-24', 'Prima de navidad 2022', 7900000, 'P'),
+(5, 6, '2022-12-24', 'Prima de navidad 2022', 7900000, 'T'),
 (14, 1, '2022-12-26', 'Compras de mercado para casa', 1300000, 'E'),
 (15, 7, '2022-11-26', 'Factura Primer Piso', 20829, 'T'),
 (16, 7, '2022-11-26', 'Factura Segundo Piso', 14802, 'T'),
@@ -240,38 +267,37 @@ INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `
 (27, 18, '2022-12-02', 'Pago mensual', 580000, 'T'),
 (28, 34, '2022-12-03', 'Aporte mensual salud mamá Stella', 125000, 'T'),
 (29, 39, '2022-12-07', 'Factura celular mamá Tenny', 33000, 'T'),
-(30, 36, '2022-12-10', 'Mensualidad Plan Premium Sanitas', 37400, 'P'),
-(31, 33, '2022-12-12', 'Pago mensual', 108193, 'P'),
+(30, 36, '2022-12-10', 'Mensualidad Plan Premium Sanitas', 37400, 'T'),
+(31, 33, '2022-12-12', 'Pago mensual', 108193, 'T'),
 (32, 52, '2022-12-13', 'Débito automático mensual', 29577, 'P'),
 (33, 53, '2022-12-14', 'Débito automático mensual', 12990, 'P'),
-(34, 16, '2022-12-15', 'Pago mensual Crédito Hipotecario', 850000, 'P'),
+(34, 16, '2022-12-15', 'Pago mensual Crédito Hipotecario', 850000, 'T'),
 (35, 43, '2022-12-18', 'Pago mensualidad y ocasionales', 170000, 'E'),
 (36, 40, '2022-12-19', 'Factura internet primer piso', 67240, 'T'),
 (37, 40, '2022-12-19', 'factura TV segundo piso', 63077, 'T'),
 (38, 22, '2022-12-21', 'Corte cabello Andrés Daniel', 30000, 'P'),
 (39, 38, '2022-12-22', 'Factura primer piso', 230000, 'P'),
 (40, 38, '2022-12-22', 'Factura Segundo Piso', 160000, 'P'),
-(41, 8, '2022-12-24', 'Aporte a Angie', 800000, 'P'),
+(41, 8, '2022-12-24', 'Aporte a Angie', 800000, 'T'),
 (42, 8, '2022-12-24', 'Aporte a Andrés Daniel', 570000, 'P'),
-(43, 8, '2022-12-24', 'Aporte mamá Stella', 600000, 'P'),
-(44, 8, '2022-12-24', 'Aporte mamá Tenny', 600000, 'P'),
-(45, 9, '2022-12-24', 'Aporte extraordinario', 700000, 'P'),
+(43, 8, '2022-12-24', 'Aporte mamá Stella', 600000, 'T'),
+(44, 8, '2022-12-24', 'Aporte mamá Tenny', 600000, 'T'),
+(45, 9, '2022-12-24', 'Aporte extraordinario', 700000, 'T'),
 (46, 14, '2022-12-24', 'Regalo Navidad Andrés Daniel', 120000, 'P'),
 (47, 20, '2022-12-24', 'Regalo Navidad Andrés Daniel', 120000, 'P'),
 (48, 14, '2022-12-24', 'Cena navideña', 150000, 'P'),
-(49, 19, '2022-12-24', 'Pago préstamo Renta - Alejandro Melo', 1250000, 'P'),
-(50, 18, '2022-12-24', 'Abono extraordinario', 520000, 'P'),
+(49, 19, '2022-12-24', 'Pago préstamo Renta - Alejandro Melo', 1250000, 'T'),
+(50, 18, '2022-12-24', 'Abono extraordinario', 520000, 'T'),
 (51, 19, '2022-12-24', 'Pago préstamo reparación lavadora - Andrés Daniel', 500000, 'E'),
 (52, 23, '2022-12-24', 'Compra ropa Yeimy', 160000, 'E'),
 (54, 56, '2022-12-26', 'Salidas a comer diciembre', 250000, 'E'),
 (55, 57, '2022-12-26', 'Gastos de emergencia, o no presupuestados', 500000, 'E'),
 (56, 41, '2022-12-26', 'Gastos Gasolina vehículo familiar', 170000, 'E'),
-(57, 44, '2022-12-26', 'Gastos de transporte: MIO, Taxis o similares', 90000, 'E'),
+(57, 44, '2022-12-26', 'Gastos de transporte: MIO, Taxis o similares', 90000, 'T'),
 (58, 12, '2022-12-26', 'Compra de comida fuera de casa', 80000, 'E'),
 (59, 27, '2022-12-26', 'Compra de alimento whiskas para gatos', 18320, 'T'),
 (60, 28, '2022-12-26', 'Compra de CatChow o Donkat para gatos', 34300, 'T'),
 (61, 29, '2022-12-26', 'Compra de arena para gatos', 31980, 'T'),
-(62, 37, '2022-12-26', 'Gastos en salud no presupuestados', 50000, 'E'),
 (63, 58, '2022-12-26', 'Gastos por concepto de Otras salidas', 80000, 'E'),
 (64, 31, '2022-12-26', 'Salida con toda la familia de la casa', 500000, 'P'),
 (65, 14, '2022-12-31', 'Cena de fin de año', 150000, 'P'),
@@ -279,13 +305,14 @@ INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `
 (67, 20, '2023-01-02', 'Regalo cumpleaños Andrés Daniel', 120000, 'P'),
 (68, 14, '2023-01-09', 'Cumpleaños mamá Tenny', 160000, 'P'),
 (69, 14, '2023-01-26', 'Cumpleaños mamá Stella', 160000, 'P'),
-(70, 57, '2022-12-12', 'Aporte recolectado novena CGR - grupo 2', 199200, 'P'),
+(70, 57, '2022-12-12', 'Aporte recolectado novena CGR - grupo 2', 199200, 'T'),
 (71, 5, '2022-12-01', 'Devolución Williams Netflix y Prime Video', 28400, 'T'),
 (72, 3, '2022-11-25', 'Saldo en banco noviembre 2022', 65000, 'T'),
 (73, 55, '2022-12-07', 'Aporte novena grupo 2 Cristian y Wiliams', 66200, 'T'),
 (74, 55, '2022-12-07', 'Aporte novena grupo 2 Gabriela e Isabela', 66200, 'T'),
 (75, 55, '2022-12-07', 'Aporte novena grupo 2 Alvaro', 33200, 'P'),
-(76, 40, '2022-12-01', 'Factura celular mamá Stella', 52500, 'T');
+(76, 40, '2022-12-01', 'Factura celular mamá Stella', 52500, 'T'),
+(77, 37, '2022-12-26', 'Gastos en salud no presupuestados', 65000, 'E');
 
 -- --------------------------------------------------------
 
@@ -296,8 +323,8 @@ INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `
 CREATE TABLE `rubros` (
   `id` int(11) NOT NULL,
   `idcuenta` int(11) NOT NULL,
-  `nombre` varchar(75) NOT NULL,
-  `descripcion` varchar(128) NOT NULL
+  `nombre` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -416,7 +443,7 @@ ALTER TABLE `cuentas`
 -- AUTO_INCREMENT de la tabla `ejecutados`
 --
 ALTER TABLE `ejecutados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT de la tabla `fuentes`
@@ -428,13 +455,13 @@ ALTER TABLE `fuentes`
 -- AUTO_INCREMENT de la tabla `movimientos`
 --
 ALTER TABLE `movimientos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `programados`
 --
 ALTER TABLE `programados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT de la tabla `rubros`
