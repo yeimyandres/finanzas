@@ -1,3 +1,15 @@
+function cargarlistadoejec(urlbase,idcuenta,idrubro){
+    $.ajax({
+        type: "POST",
+        url: urlbase,
+        dataType: "html",
+        data: "idcuenta="+idcuenta+"&idrubro="+idrubro,
+        success: function(r){
+            //$('#cborubros').html(r);
+            $("#tblEjecutados tbody").html(r);
+        }
+    });
+}
 function cargaprogs(idrubro,urlbase){
     $.ajax({
         type: "POST",

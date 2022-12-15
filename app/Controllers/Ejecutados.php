@@ -22,6 +22,8 @@ class ejecutados extends Controller{
         $insql .= "ORDER BY c.tipomovimiento DESC, e.fecha ASC, c.nombre ASC, r.nombre ASC";
 
         $datos['ejecutados'] = $ejecutado->query($insql);
+        $datos['fltcuentas'] = $ejecutado->query("SELECT id,nombre FROM cuentas ORDER BY nombre");
+        $datos['fltrubros'] = $ejecutado->query("SELECT id,nombre FROM rubros ORDER BY nombre");
 
         $datos['cabecera']=view('plantilla/cabecera');
         $datos['pie']=view('plantilla/pie');
@@ -273,6 +275,87 @@ class ejecutados extends Controller{
 
         return $respuesta;
     
+    }
+
+    public function importarrubros2(){
+        
+        $rubro = new Rubro();
+
+        $idcuenta = $this->request->getPost('idcuenta');
+
+        $datosrubro = $rubro->where('idcuenta',$idcuenta)->orderBy('nombre','ASC')->findAll();
+
+        $respuesta = "<option value='0'>Seleccione un rubro...</option>";
+
+        foreach($datosrubro as $registro):
+
+            $respuesta .= "<option value='".$registro['id']."'>".$registro['nombre']."</option>";
+        
+        endforeach;
+
+        return $respuesta;
+    }
+
+    public function filtroejecutados(){
+
+        $ejecutados = new ejecutado();
+
+        $idcuenta = $this->request->getPost('idcuenta');
+        $idrubro = $this->request->getPost('idrubro');
+
+
+        $insql = "SELECT p.id AS idprog, p.valor AS valorp, p.detalle AS detallep, p.fechalimite, f.nombre AS nombref, f.tipofuente, r.nombre AS nombrer, c.nombre AS nombrec, c.tipomovimiento, e.id, e.fecha, e.detalle, e.valor AS valore, e.detalle AS valord";
+        $insql .= " FROM programados AS p, fuentes AS f, rubros AS r, cuentas AS c, ejecutados AS e";
+        $insql .= " WHERE p.idrubro = r.id AND f.id = e.idfuente AND r.idcuenta = c.id AND e.idprogramado = p.id";
+        if ($idcuenta <> 0){
+            $insql .= " AND c.id = ".$idcuenta;
+        }
+        if ($idrubro <> 0){
+            $insql .= " AND r.id = ".$idrubro;
+        }
+        $insql .= " ORDER BY c.tipomovimiento DESC, e.fecha ASC, c.nombre ASC, r.nombre ASC";
+
+        $datosejecutados = $ejecutados->query($insql);
+
+        $ingresosb = 0;
+        $ingresose = 0;
+        $egresosb = 0;
+        $egresose = 0;
+
+        foreach($datosejecutados->getResult() as $ejecutado):
+
+            echo "<tr>";
+
+                $fecha = date_create($ejecutado->fecha);
+                
+                echo "<td align='center'>".date_format($fecha,"j-M-Y")."</td>";
+                echo "<td align='center'>".$ejecutado->nombref."</td>";
+                echo "<td>".$ejecutado->nombrer."</td>";
+                echo "<td>".$ejecutado->valord."</td>";
+                echo "<td align='right'>".number_format($ejecutado->valore, 2)."</td>";
+
+                if ($ejecutado->tipomovimiento == 'I'){
+                        if ($ejecutado->tipofuente=='B'){
+                            $ingresosb += $ejecutado->valore;
+                        }else{
+                            $ingresose += $ejecutado->valore;
+                        }
+                    }else{
+                        if ($ejecutado->tipofuente=='B'){
+                            $egresosb += $ejecutado->valore;
+                        }else{
+                            $egresose += $ejecutado->valore;
+                        }
+                    }
+
+                echo "<td align='center'>";
+                echo "<a href='".base_url('editaejecutado/'.$ejecutado->id)."' class='btn btn-info btn-sm' type='button'>Editar</a>";
+                echo "<a href='".base_url('borraejecutado/'.$ejecutado->id)."' class='btn btn-danger btn-sm' type='button'>Borrar</a>";
+                echo "</td>";
+            echo "</tr>";
+
+        endforeach;
+
     }
 
 }

@@ -1,0 +1,77 @@
+CRITICAL - 2022-12-15 12:07:52 --> Undefined variable $fltcuentas
+in APPPATH\Views\ejecutados\listaejec.php on line 10.
+ 1 APPPATH\Views\ejecutados\listaejec.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fltcuentas', 'APPPATH\\Views\\ejecutados\\listaejec.php', 10)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\ejecutados\\listaejec.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('ejecutados/listaejec', [], true)
+ 5 APPPATH\Controllers\Ejecutados.php(29): view('ejecutados/listaejec', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-15 12:08:35 --> Undefined variable $programado
+in APPPATH\Controllers\Ejecutados.php on line 25.
+ 1 APPPATH\Controllers\Ejecutados.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $programado', 'APPPATH\\Controllers\\Ejecutados.php', 25)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->index()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-15 12:21:09 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'BY c.tipomovimiento DESC, e.fecha ASC, c.nombre ASC, r.nombre ASC' at line 1 in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT p.id AS ...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id AS ...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id AS ...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('SELECT p.id AS ...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Ejecutados.php(319): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\ejecutados->filtroejecutados()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-15 12:21:09 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Ejecutados.php on line 321.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->filtroejecutados()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-12-15 12:23:51 --> mysqli_sql_exception: Unknown column 'e.idejecutado' in 'where clause' in D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\xampp\htdocs\finanzas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT p.id AS ...', 0)
+#1 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id AS ...')
+#2 D:\xampp\htdocs\finanzas\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id AS ...')
+#3 D:\xampp\htdocs\finanzas\system\Model.php(768): CodeIgniter\Database\BaseConnection->query('SELECT p.id AS ...')
+#4 D:\xampp\htdocs\finanzas\app\Controllers\Ejecutados.php(320): CodeIgniter\Model->__call('query', Array)
+#5 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(927): App\Controllers\ejecutados->filtroejecutados()
+#6 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+#7 D:\xampp\htdocs\finanzas\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\finanzas\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-12-15 12:23:51 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Ejecutados.php on line 322.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->filtroejecutados()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-15 12:25:01 --> Undefined property: stdClass::$nomcuenta
+in APPPATH\Controllers\Ejecutados.php on line 330.
+ 1 APPPATH\Controllers\Ejecutados.php(330): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nomcuenta', 'APPPATH\\Controllers\\Ejecutados.php', 330)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->filtroejecutados()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-15 12:25:35 --> Undefined property: stdClass::$nomcuenta
+in APPPATH\Controllers\Ejecutados.php on line 328.
+ 1 APPPATH\Controllers\Ejecutados.php(328): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nomcuenta', 'APPPATH\\Controllers\\Ejecutados.php', 328)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\ejecutados->filtroejecutados()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ejecutados))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-15 12:29:12 --> syntax error, unexpected identifier "j", expecting "," or ";"
+in APPPATH\Controllers\Ejecutados.php on line 330.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Ejecutados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ejecutados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ejecutados')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\ejecutados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
