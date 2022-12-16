@@ -317,11 +317,6 @@ class ejecutados extends Controller{
 
         $datosejecutados = $ejecutados->query($insql);
 
-        $ingresosb = 0;
-        $ingresose = 0;
-        $egresosb = 0;
-        $egresose = 0;
-
         foreach($datosejecutados->getResult() as $ejecutado):
 
             echo "<tr>";
@@ -333,20 +328,6 @@ class ejecutados extends Controller{
                 echo "<td>".$ejecutado->nombrer."</td>";
                 echo "<td>".$ejecutado->valord."</td>";
                 echo "<td align='right'>".number_format($ejecutado->valore, 2)."</td>";
-
-                if ($ejecutado->tipomovimiento == 'I'){
-                        if ($ejecutado->tipofuente=='B'){
-                            $ingresosb += $ejecutado->valore;
-                        }else{
-                            $ingresose += $ejecutado->valore;
-                        }
-                    }else{
-                        if ($ejecutado->tipofuente=='B'){
-                            $egresosb += $ejecutado->valore;
-                        }else{
-                            $egresose += $ejecutado->valore;
-                        }
-                    }
 
                 echo "<td align='center'>";
                 echo "<a href='".base_url('editaejecutado/'.$ejecutado->id)."' class='btn btn-info btn-sm' type='button'>Editar</a>";

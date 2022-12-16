@@ -18,6 +18,7 @@
                 </div>
                 <div class="form-group" id="cborubros">
                 </div>
+                <input type="hidden" name="id" value="<?=$programado['id']?>">
                 <div class="form-group">
                     <label for="fechalimite">Fecha límite pago:</label>
                     <input id="fechalimite" class="form-control" type="date" name="fechalimite" value="<?=$programado['fechalimite']?>">
