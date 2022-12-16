@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-12-2022 a las 17:56:03
+-- Tiempo de generación: 16-12-2022 a las 14:08:05
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -183,7 +183,18 @@ INSERT INTO `ejecutados` (`id`, `idprogramado`, `idfuente`, `fecha`, `detalle`, 
 (114, 49, 1, '2022-12-14', 'Segundo pago deuda', 250000),
 (115, 56, 3, '2022-12-14', 'Gasolina corriente Primax', 90029),
 (116, 57, 2, '2022-12-14', 'Transportes varios', 30000),
-(117, 14, 2, '2022-12-14', 'Compras varias', 66000);
+(117, 14, 2, '2022-12-14', 'Compras varias', 66000),
+(118, 14, 2, '2022-12-14', 'Compra Q\'pan', 13000),
+(119, 42, 2, '2022-12-14', 'Aporte a Andrés Daniel', 570000),
+(120, 51, 2, '2022-12-14', 'Devolución total préstamo Andrés Daniel', 479200),
+(121, 55, 2, '2022-12-14', 'Compra vive 100', 5000),
+(122, 32, 1, '2022-12-13', 'Débito automático mensual', 29577),
+(123, 33, 1, '2022-12-14', 'Débito automático mensual', 12990),
+(124, 58, 2, '2022-12-15', 'Compras varias', 3500),
+(125, 55, 2, '2022-12-16', 'Uber casa - oficina', 11000),
+(126, 14, 2, '2022-12-15', 'Compras quesera El Castillo', 11000),
+(127, 58, 2, '2022-12-16', 'Arepa Yami', 1200),
+(128, 75, 1, '2022-12-09', 'Aporte novena grupo 2 Alvaro', 33200);
 
 -- --------------------------------------------------------
 
@@ -269,17 +280,15 @@ INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `
 (29, 39, '2022-12-07', 'Factura celular mamá Tenny', 33000, 'T'),
 (30, 36, '2022-12-10', 'Mensualidad Plan Premium Sanitas', 37400, 'T'),
 (31, 33, '2022-12-12', 'Pago mensual', 108193, 'T'),
-(32, 52, '2022-12-13', 'Débito automático mensual', 29577, 'P'),
-(33, 53, '2022-12-14', 'Débito automático mensual', 12990, 'P'),
+(32, 52, '2022-12-13', 'Débito automático mensual', 29577, 'T'),
+(33, 53, '2022-12-14', 'Débito automático mensual', 12990, 'T'),
 (34, 16, '2022-12-15', 'Pago mensual Crédito Hipotecario', 850000, 'T'),
 (35, 43, '2022-12-18', 'Pago mensualidad y ocasionales', 170000, 'E'),
 (36, 40, '2022-12-19', 'Factura internet primer piso', 67240, 'T'),
 (37, 40, '2022-12-19', 'factura TV segundo piso', 63077, 'T'),
 (38, 22, '2022-12-21', 'Corte cabello Andrés Daniel', 30000, 'P'),
-(39, 38, '2022-12-22', 'Factura primer piso', 230000, 'P'),
-(40, 38, '2022-12-22', 'Factura Segundo Piso', 160000, 'P'),
 (41, 8, '2022-12-24', 'Aporte a Angie', 800000, 'T'),
-(42, 8, '2022-12-24', 'Aporte a Andrés Daniel', 570000, 'P'),
+(42, 8, '2022-12-24', 'Aporte a Andrés Daniel', 570000, 'T'),
 (43, 8, '2022-12-24', 'Aporte mamá Stella', 600000, 'T'),
 (44, 8, '2022-12-24', 'Aporte mamá Tenny', 600000, 'T'),
 (45, 9, '2022-12-24', 'Aporte extraordinario', 700000, 'T'),
@@ -288,7 +297,7 @@ INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `
 (48, 14, '2022-12-24', 'Cena navideña', 150000, 'P'),
 (49, 19, '2022-12-24', 'Pago préstamo Renta - Alejandro Melo', 1250000, 'T'),
 (50, 18, '2022-12-24', 'Abono extraordinario', 520000, 'T'),
-(51, 19, '2022-12-24', 'Pago préstamo reparación lavadora - Andrés Daniel', 500000, 'E'),
+(51, 19, '2022-12-24', 'Pago préstamo reparación lavadora - Andrés Daniel', 500000, 'T'),
 (52, 23, '2022-12-24', 'Compra ropa Yeimy', 160000, 'E'),
 (54, 56, '2022-12-26', 'Salidas a comer diciembre', 250000, 'E'),
 (55, 57, '2022-12-26', 'Gastos de emergencia, o no presupuestados', 500000, 'E'),
@@ -310,9 +319,11 @@ INSERT INTO `programados` (`id`, `idrubro`, `fechalimite`, `detalle`, `valor`, `
 (72, 3, '2022-11-25', 'Saldo en banco noviembre 2022', 65000, 'T'),
 (73, 55, '2022-12-07', 'Aporte novena grupo 2 Cristian y Wiliams', 66200, 'T'),
 (74, 55, '2022-12-07', 'Aporte novena grupo 2 Gabriela e Isabela', 66200, 'T'),
-(75, 55, '2022-12-07', 'Aporte novena grupo 2 Alvaro', 33200, 'P'),
+(75, 55, '2022-12-07', 'Aporte novena grupo 2 Alvaro', 33200, 'T'),
 (76, 40, '2022-12-01', 'Factura celular mamá Stella', 52500, 'T'),
-(77, 37, '2022-12-26', 'Gastos en salud no presupuestados', 65000, 'E');
+(77, 37, '2022-12-26', 'Gastos en salud no presupuestados', 65000, 'E'),
+(78, 38, '2022-12-22', 'Factura primer piso', 217986, 'P'),
+(79, 38, '2022-12-22', 'Factura Segundo Piso', 152331, 'P');
 
 -- --------------------------------------------------------
 
@@ -443,7 +454,7 @@ ALTER TABLE `cuentas`
 -- AUTO_INCREMENT de la tabla `ejecutados`
 --
 ALTER TABLE `ejecutados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- AUTO_INCREMENT de la tabla `fuentes`
@@ -461,7 +472,7 @@ ALTER TABLE `movimientos`
 -- AUTO_INCREMENT de la tabla `programados`
 --
 ALTER TABLE `programados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT de la tabla `rubros`
