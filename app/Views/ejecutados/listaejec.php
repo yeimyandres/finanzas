@@ -84,6 +84,7 @@ endforeach;
 <script src="<?=base_url('inc/js/ejecutados.js')?>"></script>
 <script>
     $(document).ready(function(){
+        $('#tblEjecutados tbody').css("display", "none");
         $('#cbocuentas').change(function(){
             urlbase = "<?php echo base_url('index.php/ejecutados/filtroejecutados'); ?>";
             urlbaser = "<?php echo base_url('index.php/ejecutados/importarrubros2'); ?>";
@@ -91,12 +92,16 @@ endforeach;
             idrubro = 0;
             cargarubros(idcuenta,urlbaser);
             cargarlistadoejec(urlbase,idcuenta,idrubro);
+            $('#tblEjecutados tbody').show("fast");
         });
         $('#cborubros').change(function(){
             urlbase = "<?php echo base_url('index.php/ejecutados/filtroejecutados'); ?>";
             idrubro = $(this).val();
             idcuenta = $('#cbocuentas').val();
             cargarlistadoejec(urlbase,idcuenta,idrubro);
+        });
+        $('#tblEjecutados thead').click(function(){
+            $('#tblEjecutados tbody').toggle();
         });
     });
 </script>

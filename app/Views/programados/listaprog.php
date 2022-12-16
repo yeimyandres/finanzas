@@ -78,6 +78,7 @@ endforeach;
 <script src="<?=base_url('inc/js/programados.js')?>"></script>
 <script>
     $(document).ready(function(){
+        $('#tblProgramados tbody').css("display", "none");
         $('#cbocuentas').change(function(){
             urlbase = "<?php echo base_url('index.php/programados/filtroprogramados'); ?>";
             urlbaser = "<?php echo base_url('index.php/programados/importarrubros2'); ?>";
@@ -85,12 +86,16 @@ endforeach;
             idrubro = 0;
             cargarubros(idcuenta,urlbaser);
             cargarlistadoprog(urlbase,idcuenta,idrubro);
+            $('#tblProgramados tbody').show("fast");
         });
         $('#cborubros').change(function(){
             urlbase = "<?php echo base_url('index.php/programados/filtroprogramados'); ?>";
             idrubro = $(this).val();
             idcuenta = $('#cbocuentas').val();
             cargarlistadoprog(urlbase,idcuenta,idrubro);
+        });
+        $('#tblProgramados thead').click(function(){
+            $('#tblProgramados tbody').toggle();
         });
     });
 </script>

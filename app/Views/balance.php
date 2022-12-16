@@ -1,7 +1,7 @@
 <?=$cabecera?>
 <br/>
 <h2>Balance General</h2>
-<table class="table table-light">
+<table class="table table-light" id="tblBalanceGeneral">
     <thead class="thead-light">
         <tr align='center'>
             <th>Tipo movimiento</th>
@@ -42,7 +42,7 @@
     </tbody>
 </table>
 <h2>Saldos disponibles</h2>
-<table class="table table-light">
+<table class="table table-light" id="tblSaldosDisponibles">
     <thead class="thead-light">
         <tr align='center'>
             <th>Fuente Dinero</th>
@@ -129,7 +129,26 @@
 </table>
 </br>
 <h2>Estado de rubros</h2>
-<table class="table table-light">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="radestado" id="radestado1" value="todos" checked>
+  <label class="form-check-label" for="radestado1">
+    Todos los registros
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="radestado" id="radestado2" value="pagados">
+  <label class="form-check-label" for="radestado2">
+    Rubros pagados
+  </label>
+</div>  
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="radestado" id="radestado3" value="pendientes">
+  <label class="form-check-label" for="radestado3">
+    Rubros pendientes de pago
+  </label>
+</div>
+</br>
+<table class="table table-light" id="tblEstadoRubros">
     <thead class="thead-light">
         <tr align='center'>
             <th>Tipo Movimiento</th>
@@ -180,4 +199,37 @@
     </tbody>
 </table>
 
-<?=$pie?>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="<?=base_url('inc/js/balance.js')?>"></script>
+<script>
+    $(document).ready(function(){
+        $('#tblBalanceGeneral tbody').css("display","none");
+        $('#tblSaldosDisponibles tbody').css("display","none");
+        $('#tblEstadoRubros tbody').css("display","none");
+        $('#tblBalanceGeneral thead').click(function(){
+            $('#tblBalanceGeneral tbody').toggle();
+        });
+        $('#tblSaldosDisponibles thead').click(function(){
+            $('#tblSaldosDisponibles tbody').toggle();
+        });
+        $('#tblEstadoRubros thead').click(function(){
+            $('#tblEstadoRubros tbody').toggle();
+        });
+        urlbase = "<?php echo base_url('index.php/balance/cargarrubros'); ?>";
+        $('#radestado1').click(function(){
+            estado = $(this).val();
+            cargarestadorubros(urlbase,estado);
+        });
+        $('#radestado2').click(function(){
+            estado = $(this).val();
+            cargarestadorubros(urlbase,estado);
+        });
+        $('#radestado3').click(function(){
+            estado = $(this).val();
+            cargarestadorubros(urlbase,estado);
+        });
+    });
+</script>
+</body>
+</html>
