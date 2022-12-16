@@ -86,3 +86,5 @@ $routes->post('actualizaejecutado', 'ejecutados::actualizar');
 $routes->get('balance', 'balance::index');
 $routes->get('registramovimiento', 'ejecutados::movimientos');
 $routes->post('guardamovimiento', 'ejecutados::guardamovimientos');
+$routes->get('pagatarjeta','balance::pagatarjeta');
+$routes->get('cerrarperiodo', 'balance::cerrarperiodo');

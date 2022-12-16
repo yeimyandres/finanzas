@@ -49,6 +49,7 @@
             <th>Valor ingresos + consignaciones</th>
             <th>Valor egresos + retiros</th>
             <th>Disponible</th>
+            <th>acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -112,18 +113,23 @@
             <td><?="$ ".number_format($bancosi,2)?></td>
             <td><?="$ ".number_format($bancose,2)?></td>
             <td><?="$ ".number_format($bancosi-$bancose-$tarjetae,2)?></td>
+            <td></td>
         </tr>
         <tr align='right'>
             <td align='center'>Efectivo</td>
             <td><?="$ ".number_format($efectivoi,2)?></td>
             <td><?="$ ".number_format($efectivoe,2)?></td>
             <td><?="$ ".number_format($efectivoi-$efectivoe,2)?></td>
+            <td></td>
         </tr>
         <tr align='right'>
             <td align='center'>Tarjeta de crédito</td>
             <td><?="$ ".number_format($tarjetai,2)?></td>
             <td><?="$ ".number_format($tarjetae,2)?></td>
             <td><?="$ ".number_format($tarjetai-$tarjetae,2)?></td>
+            <td>
+                <a href="<?=base_url('pagatarjeta');?>" class="btn btn-info btn-sm" type="button">Pagar Tarjeta</a>
+            </td>
         </tr>
     </tbody>
 </table>

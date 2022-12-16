@@ -98,6 +98,41 @@ class Balance extends Controller{
 
         endforeach;
 
+    }
+
+    public function pagatarjeta(){
+
+        $tarjeta = new Ejecutado();
+
+        $fuente = 2;
+
+        //$tarjeta->update()
+
+        $tarjeta->set(idfuente, $fuente)->where('idfuente', 3)->update();
+
+        $tarjeta->update($datos);
+
+    }
+
+    public function cerrarperiodo(){
+
+        $periodo = new ejecutado();
+
+        $insql = "INSERT INTO historicos";
+        $insql .= " SELECT e.fecha, c.tipomovimiento, f.nombre, c.nombre, r.nombre, e.detalle, e.valor";
+        $insql .= " FROM programados AS p, ejecutados AS e, rubros AS r, cuentas AS c, fuentes AS f";
+        $insql .= " WHERE p.idrubro = r.id AND e.idprogramado = p.id AND e.idfuente = f.id AND r.idcuenta = c.id";
+
+        $program = $periodo->query($insql);
+        
+        $insql = "UPDATE programados SET fechalimite = DATE_ADD(fechalimite, interval 30 day);";
+
+        $program = $periodo->query($insql);
+
+        $this->db->empty_table("ejecutados");
+        $this->db->empty_table("movimientos");
+
+        echo "Periodo cerrado correctamente";
 
     }
 

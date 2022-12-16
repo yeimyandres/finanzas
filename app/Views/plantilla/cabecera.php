@@ -31,6 +31,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="<?=base_url('balance')?>">Balance</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?=base_url('cerrarperiodo')?>">Cerrar Periodo</a>
+                </li>
             </ul>
         </div>
     </nav>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-12-2022 a las 14:08:05
+-- Tiempo de generación: 16-12-2022 a las 20:05:48
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -194,7 +194,8 @@ INSERT INTO `ejecutados` (`id`, `idprogramado`, `idfuente`, `fecha`, `detalle`, 
 (125, 55, 2, '2022-12-16', 'Uber casa - oficina', 11000),
 (126, 14, 2, '2022-12-15', 'Compras quesera El Castillo', 11000),
 (127, 58, 2, '2022-12-16', 'Arepa Yami', 1200),
-(128, 75, 1, '2022-12-09', 'Aporte novena grupo 2 Alvaro', 33200);
+(128, 75, 1, '2022-12-09', 'Aporte novena grupo 2 Alvaro', 33200),
+(129, 58, 2, '2022-12-16', 'Almuerzo parasoles rojos', 10000);
 
 -- --------------------------------------------------------
 
@@ -216,6 +217,22 @@ INSERT INTO `fuentes` (`id`, `nombre`, `tipofuente`) VALUES
 (1, 'Cuenta Bancaria Yeimy', 'B'),
 (2, 'Efectivo Yeimy', 'E'),
 (3, 'Tarjeta Crédito MC Gold Bancolombia', 'T');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `historicos`
+--
+
+CREATE TABLE `historicos` (
+  `fecha` date NOT NULL,
+  `tipomovimiento` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nomFuente` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nomCuenta` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nomRubro` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `detalle` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `valor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -454,7 +471,7 @@ ALTER TABLE `cuentas`
 -- AUTO_INCREMENT de la tabla `ejecutados`
 --
 ALTER TABLE `ejecutados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
 
 --
 -- AUTO_INCREMENT de la tabla `fuentes`

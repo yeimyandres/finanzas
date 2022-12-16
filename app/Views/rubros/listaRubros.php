@@ -4,7 +4,7 @@
 <br/>
 <br/>
 
-<table class="table table-light">
+<table class="table table-light" id='tblRubros'>
     <thead class="thead-light">
         <tr align='center'>
             <th>Cuenta</th>
@@ -40,4 +40,15 @@
     </tbody>
 </table>
 
-<?=$pie?>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#tblRubros tbody').css("display","none");
+        $('#tblRubros thead').click(function(){
+            $('#tblRubros tbody').toggle();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,20 +1,25 @@
 <?=$cabecera?>
 <br/>
 <a class="btn btn-success" href="<?=base_url('creaprogramado')?>">Programar Nuevo Ingreso/Egreso</a>
-<label for='cbocuentas'>Cuentas: </label>
-<select id="cbocuentas" name="cbocuentas">
-    <option value='0'>Seleccione una cuenta...</option>
-<?php
-foreach($fltcuentas->getResult() as $fltcuenta):
-    echo "<option value='".$fltcuenta->id."'>".$fltcuenta->nombre."</option>";
-endforeach;
-?>
-</select>
-<label for='cborubros'>Rubros: </label>
-<select id="cborubros" name="cborubros">
-</select>
-
-<br/>
+</br>
+<div class="row">
+    <div class="col">
+        <label for='cbocuentas'>Cuentas: </label>
+        <select class='custom-select' id="cbocuentas" name="cbocuentas">
+            <option value='0'>Seleccione una cuenta...</option>
+        <?php
+        foreach($fltcuentas->getResult() as $fltcuenta):
+            echo "<option value='".$fltcuenta->id."'>".$fltcuenta->nombre."</option>";
+        endforeach;
+        ?>
+        </select>
+    </div>
+    <div class="col">
+        <label for='cborubros'>Rubros: </label>
+        <select class='custom-select' id="cborubros" name="cborubros">
+        </select>
+    </div>
+</div>
 <br/>
 <table class="table table-sm table-light" id='tblProgramados'>
     <thead class="thead-light">

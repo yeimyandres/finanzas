@@ -3,7 +3,7 @@
 <a class="btn btn-success" href="<?=base_url('creacuenta')?>">Crear nueva cuenta</a>
 <br/>
 <br/>
-<table class="table table-light">
+<table class="table table-light" id='tblCuentas'>
     <thead class="thead-light">
         <tr>
             <th>Nombre</th>
@@ -34,4 +34,15 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-<?=$pie?>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#tblCuentas tbody').css("display","none");
+        $('#tblCuentas thead').click(function(){
+            $('#tblCuentas tbody').toggle();
+        });
+    });
+</script>
+</body>
+</html>
