@@ -4,6 +4,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 
 use App\Models\Programado;
+use App\Models\Movimiento;
 use App\Models\Ejecutado;
 use App\Models\Cuenta;
 use App\Models\Rubro;
@@ -108,15 +109,18 @@ class Balance extends Controller{
 
         //$tarjeta->update()
 
-        $tarjeta->set(idfuente, $fuente)->where('idfuente', 3)->update();
+        $tarjeta->set('idfuente', $fuente)->where('idfuente', 3)->update();
 
-        $tarjeta->update($datos);
+        //$tarjeta->update($datos);
 
     }
 
     public function cerrarperiodo(){
 
         $periodo = new ejecutado();
+        $movimientos = new movimiento();
+
+        $db = db_connect();
 
         $insql = "INSERT INTO historicos";
         $insql .= " SELECT e.fecha, c.tipomovimiento, f.nombre, c.nombre, r.nombre, e.detalle, e.valor";
@@ -129,10 +133,11 @@ class Balance extends Controller{
 
         $program = $periodo->query($insql);
 
-        $this->db->empty_table("ejecutados");
-        $this->db->empty_table("movimientos");
+        $periodo->emptyTable('ejecutados');
+        $movimientos->emptyTable('movimientos');
 
-        echo "Periodo cerrado correctamente";
+        return $this->response->redirect(site_url('/listaprogramados'));
+    
 
     }
 

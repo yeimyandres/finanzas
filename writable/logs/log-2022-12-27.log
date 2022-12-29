@@ -1,0 +1,66 @@
+CRITICAL - 2022-12-27 08:36:17 --> Undefined property: App\Controllers\Balance::$db
+in APPPATH\Controllers\Balance.php on line 132.
+ 1 APPPATH\Controllers\Balance.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Balance::$db', 'APPPATH\\Controllers\\Balance.php', 132)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->cerrarperiodo()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-27 08:37:54 --> Class "App\Controllers\movimiento" not found
+in APPPATH\Controllers\Balance.php on line 120.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->cerrarperiodo()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-27 08:38:39 --> Undefined constant "App\Controllers\idfuente"
+in APPPATH\Controllers\Balance.php on line 112.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->pagatarjeta()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-27 08:39:23 --> Undefined variable $datos
+in APPPATH\Controllers\Balance.php on line 114.
+ 1 APPPATH\Controllers\Balance.php(114): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'APPPATH\\Controllers\\Balance.php', 114)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->pagatarjeta()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-27 08:40:39 --> Call to undefined method App\Models\Ejecutado::empty_table
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Balance.php(134): CodeIgniter\Model->__call('empty_table', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->cerrarperiodo()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-27 08:50:29 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::delete()
+in APPPATH\Controllers\Balance.php on line 136.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->cerrarperiodo()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-27 08:54:10 --> Undefined variable $datos
+in APPPATH\Controllers\Balance.php on line 139.
+ 1 APPPATH\Controllers\Balance.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'APPPATH\\Controllers\\Balance.php', 139)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->cerrarperiodo()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-27 08:55:10 --> Undefined variable $cabecera
+in APPPATH\Views\programados\listaprog.php on line 1.
+ 1 APPPATH\Views\programados\listaprog.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cabecera', 'APPPATH\\Views\\programados\\listaprog.php', 1)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\programados\\listaprog.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('/programados/listaprog', [], true)
+ 5 APPPATH\Controllers\Balance.php(139): view('/programados/listaprog')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->cerrarperiodo()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-27 08:56:21 --> Invalid file: http://localhost/finanzas/public/listaprogramados.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('http://localhost/finanzas/public/listaprogramados.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('http://localhost/finanzas/public/listaprogramados', [], true)
+ 3 APPPATH\Controllers\Balance.php(139): view('http://localhost/finanzas/public/listaprogramados')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Balance->cerrarperiodo()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Balance))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

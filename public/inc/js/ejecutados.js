@@ -47,6 +47,7 @@ function cargacuentas(tipomovimiento,urlbase,urlbaser,urlbasep){
         success: function(r){
             $('#cbocuentas').html(r);
             $("#cuentas").change(function(){
+                $('#pagosprogramados').html("");
                 idcuenta = $(this).val();
                 cargarubros(idcuenta,urlbaser,urlbasep);
             });
