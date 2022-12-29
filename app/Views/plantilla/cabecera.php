@@ -19,16 +19,16 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?=base_url('listacuentas')?>">Cuentas</a>
+                    <a class="nav-link" href="<?=base_url('cuentas')?>">Cuentas</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?=base_url('listarubros')?>">Rubros</a>
+                    <a class="nav-link" href="<?=base_url('rubros')?>">Rubros</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?=base_url('listaprogramados')?>">Programado</a>
+                    <a class="nav-link" href="<?=base_url('programados')?>">Programado</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?=base_url('listaejecutados')?>">Ejecutado</a>
+                    <a class="nav-link" href="<?=base_url('ejecutados')?>">Ejecutado</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="<?=base_url('balance')?>">Balance</a>

@@ -21,6 +21,11 @@ class ejecutados extends Controller{
         $insql .= "WHERE p.idrubro = r.id AND f.id = e.idfuente AND r.idcuenta = c.id AND e.idprogramado = p.id ";
         $insql .= "ORDER BY c.tipomovimiento DESC, e.fecha ASC, c.nombre ASC, r.nombre ASC";
 
+
+        $fuente = new Fuente();
+
+        $datos['fuentes'] = $fuente->orderBy('tipofuente, nombre ASC')->findAll();
+
         $datos['ejecutados'] = $ejecutado->query($insql);
         $datos['fltcuentas'] = $ejecutado->query("SELECT id,nombre FROM cuentas ORDER BY nombre");
         $datos['fltrubros'] = $ejecutado->query("SELECT id,nombre FROM rubros ORDER BY nombre");
@@ -30,18 +35,6 @@ class ejecutados extends Controller{
         
         return view('ejecutados/listaejec',$datos);
 
-    }
-
-    public function crear(){
-
-        $fuente = new Fuente();
-
-        $datos['fuentes'] = $fuente->orderBy('tipofuente, nombre ASC')->findAll();
-
-        $datos['cabecera']=view('plantilla/cabecera');
-        $datos['pie']=view('plantilla/pie');
-
-        return view('ejecutados/creaejec',$datos);
     }
 
     public function guardar(){
