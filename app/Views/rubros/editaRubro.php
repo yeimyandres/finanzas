@@ -44,7 +44,6 @@
         $('#tipomovimiento').change(function(){
             urlbase = "<?php echo base_url('index.php/rubros/importarcuentase'); ?>";
             idcuenta = $("#idcuenta").val();
-            alert(idcuenta);
             tipomovimiento = $(this).val();
             cargacuentase(tipomovimiento,urlbase,idcuenta);
         });

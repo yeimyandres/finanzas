@@ -124,7 +124,7 @@ class Programados extends Controller{
 
         $programado->update($id,$datos);
 
-        return $this->response->redirect(site_url('/listaprogramados'));
+        return $this->response->redirect(site_url('/programados'));
 
     }
 
