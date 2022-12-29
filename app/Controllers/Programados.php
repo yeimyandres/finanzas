@@ -16,7 +16,7 @@ class Programados extends Controller{
         $insql = "SELECT r.nombre, p.id, p.fechalimite, p.detalle, p.valor, p.estado, c.tipomovimiento, c.nombre as nomcuenta ";
         $insql .= "FROM programados as p, rubros as r, cuentas as c ";
         $insql .= "WHERE p.idrubro = r.id and r.idcuenta = c.id ";
-        $insql .= "ORDER BY c.tipomovimiento DESC, p.fechalimite, c.nombre ASC";
+        $insql .= "ORDER BY c.tipomovimiento DESC, p.fechalimite ASC, c.nombre ASC";
 
         $datos['programados'] = $programado->query($insql);
         $datos['fltcuentas'] = $programado->query("SELECT id,nombre FROM cuentas ORDER BY nombre");
@@ -44,7 +44,6 @@ class Programados extends Controller{
         $programado = new programado();
 
         $validacion = $this->validate([
-            'fechalimite' => 'required|min_length[10]',
             'detalle' => 'required|min_length[3]',
             'valor' => 'required|min_length[4]'
         ]);
@@ -70,7 +69,7 @@ class Programados extends Controller{
      
         }
 
-        return $this->response->redirect(site_url('/listaprogramados'));
+        return $this->response->redirect(site_url('/programados'));
 
     }
 
@@ -83,7 +82,7 @@ class Programados extends Controller{
 
         $programado->where('id',$id)->delete($id);
 
-        return $this->response->redirect(site_url('/listaprogramados'));
+        return $this->response->redirect(site_url('/programados'));
 
     }
 
@@ -104,14 +103,17 @@ class Programados extends Controller{
         $programado = new programado();
 
         $datos=[
-            'nombre'=>$this->request->getVar('nombre'),
-            'tipomovimiento'=>$this->request->getVar('movimiento')
+            'idrubro'=>$this->request->getVar('rubros'),
+            'fechalimite'=>$this->request->getVar('fechalimite'),
+            'detalle'=>$this->request->getVar('detalle'),
+            'valor'=>$this->request->getVar('valor')
         ];
 
         $id = $this->request->getVar('id');
 
         $validacion = $this->validate([
-            'nombre' => 'required|min_length[3]'
+            'detalle' => 'required|min_length[3]',
+            'valor' => 'required|min_length[2]'
         ]);
 
         if(!$validacion){

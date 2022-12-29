@@ -1,8 +1,4 @@
 <?=$cabecera?>
-<br/>
-<a class="btn btn-success" href="<?=base_url('registramovimiento')?>">Registrar movimientos de dinero</a>
-</br>
-</br>
 <div class="card">
     <div class="card-body">
         <h5 class="card-title">Ingresar nueva ejecución</h5>
@@ -57,6 +53,9 @@
         </p>
     </div>
 </div>
+</br>
+<a class="btn btn-success" href="<?=base_url('registramovimiento')?>">Registrar movimientos de dinero</a>
+</br>
 </br>
 <h2>Pagos realizados durante la ejecución del presupuesto</h2>
 </br>

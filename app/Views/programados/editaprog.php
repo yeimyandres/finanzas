@@ -5,7 +5,7 @@
         <h5 class="card-title">Editar datos de registro a programar</h5>
         <p class="card-text">
 
-            <form method="post" action="<?=base_url('/guardaprogramado')?>" enctype="multipart/form-data">
+            <form method="post" action="<?=base_url('/actualizaprogramado')?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="tipomovimiento">Tipo de movimiento:</label>
                     <select class='custom-select' name="tipomovimiento" id="tipomovimiento">
