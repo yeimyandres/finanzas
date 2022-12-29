@@ -18,7 +18,7 @@ class Balance extends Controller{
         $programado = new Programado();
 
 
-        $insql = "SELECT p.fechalimite, c.tipomovimiento, c.nombre AS nombrec, r.nombre AS nombrer, p.valor AS valorp, SUM(e.valor) AS valore";
+        $insql = "SELECT p.fechalimite, c.tipomovimiento, c.nombre AS nombrec, r.nombre AS nombrer, p.valor AS valorp, SUM(e.valor) AS valore, p.estado";
         $insql .= " FROM programados AS p ";
         $insql .= " JOIN rubros AS r ON p.idrubro = r.id JOIN cuentas AS c ON r.idcuenta = c.id LEFT JOIN ejecutados AS e ON e.idprogramado = p.id ";
         //$insql .= " WHERE c.tipomovimiento = 'E'";
@@ -41,63 +41,6 @@ class Balance extends Controller{
         $datos['pie']=view('plantilla/pie');
         
         return view('balance',$datos);
-
-    }
-
-    public function cargarrubros(){
-
-        $programado = new Programado();
-
-        $estado = $this->request->getPost('estado');
-
-        $insql = "SELECT p.fechalimite, c.tipomovimiento, c.nombre AS nombrec, r.nombre AS nombrer, p.valor AS valorp, SUM(e.valor) AS valore";
-        $insql .= " FROM programados AS p ";
-        $insql .= " JOIN rubros AS r ON p.idrubro = r.id JOIN cuentas AS c ON r.idcuenta = c.id LEFT JOIN ejecutados AS e ON e.idprogramado = p.id ";
-        switch($estado){
-            case 'pagados':
-                $insql .= " WHERE p.estado = 'T'";
-                break;
-            case 'pendientes':
-                $insql .= " WHERE p.estado = 'E' OR p.estado = 'P'";
-                break;
-        }
-        $insql .= " GROUP BY p.id ORDER BY c.tipomovimiento DESC, p.fechalimite ASC, c.nombre, r.nombre;";
-
-        $ejecutados = $programado->query($insql);
-
-        foreach($ejecutados->getResult() as $ejecutado):
-            
-            if(is_null($ejecutado->valore)){
-                $valorejecutado = 0;
-            }else{
-                $valorejecutado = $ejecutado->valore;
-            }
-            $saldo = $ejecutado->valorp - $ejecutado->valore;
-            if ($saldo > 0){
-                $disponible = "$ ".number_format($saldo,2);
-                $clasefila = "";
-            }else{
-                $disponible = "Pagado";
-                $clasefila = "class='font-italic text-muted'";
-            }
-            echo "<tr align='center' $clasefila>";
-                    if ($ejecutado->tipomovimiento == 'I'){
-                        $movimiento = "Ingreso";
-                    }else{
-                        $movimiento = "Egreso";
-                    }
-                    $fecha = date_create($ejecutado->fechalimite);
-
-                echo "<td>$movimiento</td>";
-                echo "<td>$ejecutado->nombrec</td>";
-                echo "<td>$ejecutado->nombrer</td>";
-                echo "<td>".date_format($fecha,"j-M-Y")."</td>";
-                echo "<td align = 'right'>$ ".number_format($ejecutado->valorp,2)."</td>";
-                echo "<td align = 'right'>$ ".number_format($valorejecutado,2)."</td>";
-                echo "<td align='right'>$disponible</td>";
-            echo "</tr>";
-
-        endforeach;
 
     }
 

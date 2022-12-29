@@ -41,6 +41,8 @@
         </tr>
     </tbody>
 </table>
+</br>
+</br>
 <h2>Saldos disponibles</h2>
 <table class="table table-light" id="tblSaldosDisponibles">
     <thead class="thead-light">
@@ -134,36 +136,20 @@
     </tbody>
 </table>
 </br>
+</br>
 <h2>Estado de rubros</h2>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radestado" id="radestado1" value="todos" checked>
-  <label class="form-check-label" for="radestado1">
-    Todos los registros
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radestado" id="radestado2" value="pagados">
-  <label class="form-check-label" for="radestado2">
-    Rubros pagados
-  </label>
-</div>  
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="radestado" id="radestado3" value="pendientes">
-  <label class="form-check-label" for="radestado3">
-    Rubros pendientes de pago
-  </label>
-</div>
 </br>
 <table class="table table-light" id="tblEstadoRubros">
     <thead class="thead-light">
         <tr align='center'>
-            <th>Tipo Movimiento</th>
+            <th>Tipo Mov.</th>
             <th>Cuenta</th>
             <th>Rubro</th>
             <th>Fecha límite</th>
-            <th>Valor programado</th>
-            <th>Valor ejecutado</th>
-            <th>Saldo Disponible</th>
+            <th>Valor Prog.</th>
+            <th>Valor Ejec.</th>
+            <th>Saldo Disp.</th>
+            <th>Estado</th>
         </tr>
     </thead>
     <tbody>
@@ -182,6 +168,11 @@
                 $disponible = "Pagado";
                 $clasefila = "class='font-italic text-muted'";
             }
+            if($ejecutado->estado=='T'){
+                $estado = "Pagado";
+            }else{
+                $estado = "Disponible";
+            }
             ?>
             <tr align='center' <?=$clasefila?>>
                 <?php
@@ -199,6 +190,7 @@
                 <td align = 'right'><?="$ ".number_format($ejecutado->valorp,2);?></td>
                 <td align = 'right'><?="$ ".number_format($valorejecutado,2)?></td>
                 <td align='right'><?=$disponible?></td>
+                <td><?=$estado?></td>
             </tr>
 
         <?php endforeach; ?>
@@ -207,33 +199,38 @@
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="<?=base_url('inc/js/balance.js')?>"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function(){
-        $('#tblBalanceGeneral tbody').css("display","none");
-        $('#tblSaldosDisponibles tbody').css("display","none");
-        $('#tblEstadoRubros tbody').css("display","none");
-        $('#tblBalanceGeneral thead').click(function(){
-            $('#tblBalanceGeneral tbody').toggle();
+        $('#tblBalanceGeneral').DataTable({
+            ordering: false,
+            paging: false,
+            info: false,
+            searching: false
         });
-        $('#tblSaldosDisponibles thead').click(function(){
-            $('#tblSaldosDisponibles tbody').toggle();
+        $('#tblSaldosDisponibles').DataTable({
+            ordering: false,
+            paging: false,
+            info: false,
+            searching: false
         });
-        $('#tblEstadoRubros thead').click(function(){
-            $('#tblEstadoRubros tbody').toggle();
-        });
-        urlbase = "<?php echo base_url('index.php/balance/cargarrubros'); ?>";
-        $('#radestado1').click(function(){
-            estado = $(this).val();
-            cargarestadorubros(urlbase,estado);
-        });
-        $('#radestado2').click(function(){
-            estado = $(this).val();
-            cargarestadorubros(urlbase,estado);
-        });
-        $('#radestado3').click(function(){
-            estado = $(this).val();
-            cargarestadorubros(urlbase,estado);
+        $('#tblEstadoRubros').DataTable({
+            "lengthMenu": [5, 10, 15, 20, 25],
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros",
+                "zeroRecords": "No se encontraron registros",
+                "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sSearch": "Buscar:",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "sProcessing": "Procesando..."
+            }
         });
     });
 </script>

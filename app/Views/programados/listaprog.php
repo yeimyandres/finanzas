@@ -2,25 +2,9 @@
 <br/>
 <a class="btn btn-success" href="<?=base_url('creaprogramado')?>">Programar Nuevo Ingreso/Egreso</a>
 </br>
-<div class="row">
-    <div class="col">
-        <label for='cbocuentas'>Cuentas: </label>
-        <select class='custom-select' id="cbocuentas" name="cbocuentas">
-            <option value='0'>Seleccione una cuenta...</option>
-        <?php
-        foreach($fltcuentas->getResult() as $fltcuenta):
-            echo "<option value='".$fltcuenta->id."'>".$fltcuenta->nombre."</option>";
-        endforeach;
-        ?>
-        </select>
-    </div>
-    <div class="col">
-        <label for='cborubros'>Rubros: </label>
-        <select class='custom-select' id="cborubros" name="cborubros">
-        </select>
-    </div>
-</div>
-<br/>
+</br>
+<h2>Pagos programados en el presupuesto actual</h2>
+</br>
 <table class="table table-sm table-light" id='tblProgramados'>
     <thead class="thead-light">
         <tr align='center'>
@@ -80,27 +64,27 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="<?=base_url('inc/js/programados.js')?>"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.3.1/js/dataTables.fixedHeader.min.js"></script>
 <script>
     $(document).ready(function(){
-        $('#tblProgramados tbody').css("display", "none");
-        $('#cbocuentas').change(function(){
-            urlbase = "<?php echo base_url('index.php/programados/filtroprogramados'); ?>";
-            urlbaser = "<?php echo base_url('index.php/programados/importarrubros2'); ?>";
-            idcuenta = $(this).val();
-            idrubro = 0;
-            cargarubros(idcuenta,urlbaser);
-            cargarlistadoprog(urlbase,idcuenta,idrubro);
-            $('#tblProgramados tbody').show("fast");
-        });
-        $('#cborubros').change(function(){
-            urlbase = "<?php echo base_url('index.php/programados/filtroprogramados'); ?>";
-            idrubro = $(this).val();
-            idcuenta = $('#cbocuentas').val();
-            cargarlistadoprog(urlbase,idcuenta,idrubro);
-        });
-        $('#tblProgramados thead').click(function(){
-            $('#tblProgramados tbody').toggle();
+        var table = $('#tblProgramados').DataTable({
+            "lengthMenu": [5, 10, 15, 20, 25],
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros",
+                "zeroRecords": "No se encontraron registros",
+                "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sSearch": "Buscar:",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "sProcessing": "Procesando..."
+            }
         });
     });
 </script>
